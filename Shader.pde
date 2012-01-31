@@ -23,11 +23,11 @@ public abstract class Shader
    * be useful in computing color value (i.e., for shadows and reflections).
    */
   public abstract PVector shade (IntersectionData data, Scene scene);
-  
+
 
   /**
    * Updates given color by adding given factor of the color to add.
-   * Does not allocate new color for efficiency. 
+   * Does not allocate new color for efficiency.
    */
   public void updateColor (PVector colorToUpdate, PVector colorToAdd, float scaleFactor)
   {
@@ -59,7 +59,7 @@ public class Lambertian extends Shader
     PVector resultColor = myDiffuseColor.get();
     return resultColor;
   }
-  
+
 
   /**
    * For debugging purposes.
@@ -115,8 +115,8 @@ public class Phong extends Shader
   public String toString ()
   {
     return "Phong Shader = " +
-           "\n      Diffuse Color = " + myDiffuseColor + 
-           "\n      Specular Color = " + myDiffuseColor + 
+           "\n      Diffuse Color = " + myDiffuseColor +
+           "\n      Specular Color = " + myDiffuseColor +
            "\n      exponent = " + myExponent;
   }
 }

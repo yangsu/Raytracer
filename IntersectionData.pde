@@ -1,5 +1,5 @@
 /**
- * This class is just a simple data object, 
+ * This class is just a simple data object,
  * holding information about a particular intersection.
  */
 public class IntersectionData
@@ -9,7 +9,7 @@ public class IntersectionData
   /** The location where the intersection occurred. */
   public final PVector hitPoint;
   /** The normal of the surface at the intersection location. */
-  public final PVector normalVector;  
+  public final PVector normalVector;
   /** A reference to the actual surface. */
   public Surface surface;
   /** The t value along the ray at which the intersection occurred. */
@@ -19,8 +19,8 @@ public class IntersectionData
   /**
    * Construct intersection data from pieces.
    */
-  public IntersectionData (Ray cameraRay, 
-                           PVector hitPoint, 
+  public IntersectionData (Ray cameraRay,
+                           PVector hitPoint,
                            PVector normalVector,
                            Surface surface,
                            float t)
@@ -39,7 +39,7 @@ public class IntersectionData
   public String toString ()
   {
     return "Intersection Data = " +
-           "\n  " + surface + 
+           "\n  " + surface +
            "\n  t = " + t +
            "\n  Hit Point = " + hitPoint +
            "\n  Normal Vector = " + normalVector;

@@ -17,7 +17,7 @@ void setup ()
 {
   // smaller is faster, bigger for more detailed pictures
   size(600, 600);
-  // computed color values range from [0 .. 1] 
+  // computed color values range from [0 .. 1]
   colorMode(RGB, 1.0);
   // generate picture only, no animation
   noLoop();

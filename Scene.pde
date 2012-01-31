@@ -1,5 +1,5 @@
 /**
- * Represents a collection of objects, lights illuminating them, and a view point. 
+ * Represents a collection of objects, lights illuminating them, and a view point.
  */
 public class Scene
 {
@@ -43,14 +43,14 @@ public class Scene
     }
     else
     {
-      if (debug) println("No surface hit by ray.");      
+      if (debug) println("No surface hit by ray.");
       return BACKGROUND_COLOR;
     }
   }
 
 
   /**
-   * Returns the first intersection of given ray with surfaces in this scene. 
+   * Returns the first intersection of given ray with surfaces in this scene.
    */
   public IntersectionData getClosestIntersection (Ray ray)
   {
@@ -68,7 +68,7 @@ public class Scene
     if (hitSurface != null)
     {
       PVector hitPoint = ray.evaluate(minDistance);
-      return new IntersectionData(ray, hitPoint, 
+      return new IntersectionData(ray, hitPoint,
                                   hitSurface.getNormal(hitPoint),
                                   hitSurface, minDistance);
     }
@@ -150,10 +150,10 @@ public class Scene
   private void setCamera (XMLElement[] properties)
   {
     Map<String, Object> values = parse(properties);
-    myCamera = new Camera((PVector)values.get("position"), 
-                          (PVector)values.get("direction"), 
-                          (PVector)values.get("viewup"), 
-                          (PVector)values.get("imageplanenormal"), 
+    myCamera = new Camera((PVector)values.get("position"),
+                          (PVector)values.get("direction"),
+                          (PVector)values.get("viewup"),
+                          (PVector)values.get("imageplanenormal"),
                           (PVector)values.get("imageplane"));
   }
 
@@ -161,7 +161,7 @@ public class Scene
   private void addLight (XMLElement[] properties)
   {
     Map<String, Object> values = parse(properties);
-    myLights.add(new Light((PVector)values.get("position"), 
+    myLights.add(new Light((PVector)values.get("position"),
                            (PVector)values.get("color")));
   }
 
@@ -171,14 +171,14 @@ public class Scene
     Map<String, Object> values = parse(properties);
     if (type.equalsIgnoreCase("sphere"))
     {
-      mySurfaces.add(new Sphere((PVector)values.get("center"), 
-                                ((PVector)values.get("radius")).x, 
+      mySurfaces.add(new Sphere((PVector)values.get("center"),
+                                ((PVector)values.get("radius")).x,
                                 myShaders.get(values.get("shader"))));
     }
     else if (type.equalsIgnoreCase("box"))
     {
-      mySurfaces.add(new Box((PVector)values.get("minpoint"), 
-                             ((PVector)values.get("maxpoint")), 
+      mySurfaces.add(new Box((PVector)values.get("minpoint"),
+                             ((PVector)values.get("maxpoint")),
                              myShaders.get(values.get("shader"))));
     }
   }
@@ -189,12 +189,12 @@ public class Scene
     Map<String, Object> values = parse(properties);
     if (type.equalsIgnoreCase("lambertian"))
     {
-      myShaders.put(name, 
+      myShaders.put(name,
                     new Lambertian((PVector)values.get("diffusecolor")));
     }
     else if (type.equalsIgnoreCase("phong"))
     {
-      myShaders.put(name, 
+      myShaders.put(name,
                     new Phong((PVector)values.get("diffusecolor"),
                               (PVector)values.get("specularcolor"),
                               ((PVector)values.get("exponent")).x));
@@ -211,8 +211,8 @@ public class Scene
       if (p.getContent() != null)
       {
         float[] nums = float(split(p.getContent(), " "));
-        values.put(key, new PVector(nums[0], 
-                                    nums.length > 1 ? nums[1] : 0, 
+        values.put(key, new PVector(nums[0],
+                                    nums.length > 1 ? nums[1] : 0,
                                     nums.length > 2 ? nums[2] : 0));
       }
       else

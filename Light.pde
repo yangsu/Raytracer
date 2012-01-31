@@ -1,7 +1,7 @@
 /**
  * Represents a basic point light source.
- * 
- * It is infinitely small and emits at constant power in all directions. 
+ *
+ * It is infinitely small and emits at constant power in all directions.
  * This is a useful idealization of a small light emitter.
  */
 public class Light
@@ -61,8 +61,8 @@ public class Light
   public String toString ()
   {
     return "Light = " +
-           "\n File Data" + 
-           "\n  Position = " + myPosition + 
+           "\n File Data" +
+           "\n  Position = " + myPosition +
            "\n  Color = " + myColor;
   }
 }

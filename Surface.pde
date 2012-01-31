@@ -1,5 +1,5 @@
 /**
- * Abstract base class for all surfaces. 
+ * Abstract base class for all surfaces.
  */
 public abstract class Surface
 {
@@ -18,7 +18,7 @@ public abstract class Surface
 
 
   /**
-   * Returns t closest value for which ray intersects this surface, or 
+   * Returns t closest value for which ray intersects this surface, or
    * -Integer.MAX_VALUE if no intersection occurs.
    */
   public abstract float intersects (Ray ray);
@@ -58,8 +58,8 @@ public class Sphere extends Surface
   /**
    * Construct surface from data.
    */
-  public Sphere (PVector center, 
-                 float radius, 
+  public Sphere (PVector center,
+                 float radius,
                  Shader material)
   {
     super(material);
@@ -74,7 +74,7 @@ public class Sphere extends Surface
   public float intersects (Ray ray)
   {
     // TODO: Complete this function
-    return -Integer.MAX_VALUE;
+      return -Integer.MAX_VALUE;
   }
 
 
@@ -88,7 +88,7 @@ public class Sphere extends Surface
     result.normalize();
     return result;
   }
-  
+
 
   /**
    * For debugging purposes.
@@ -96,7 +96,7 @@ public class Sphere extends Surface
   public String toString ()
   {
     return "Sphere Surface = " +
-           "\n    " + myShader + 
+           "\n    " + myShader +
            "\n    Center = " + myCenter +
            "\n    Radius = " + myRadius;
   }
@@ -115,8 +115,8 @@ public class Box extends Surface
   /**
    * Construct surface from data.
    */
-  public Box (PVector minPoint, 
-              PVector maxPoint, 
+  public Box (PVector minPoint,
+              PVector maxPoint,
               Shader material)
   {
     super(material);
@@ -145,7 +145,7 @@ public class Box extends Surface
     result.normalize();
     return result;
   }
-  
+
 
   /**
    * For debugging purposes.
@@ -153,7 +153,7 @@ public class Box extends Surface
   public String toString ()
   {
     return "Box Surface = " +
-           "\n    " + myShader + 
+           "\n    " + myShader +
            "\n    Min Point = " + myMinPoint +
            "\n    Max Point = " + myMaxPoint;
   }

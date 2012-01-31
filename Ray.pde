@@ -50,8 +50,8 @@ public class Ray
    */
   public PVector evaluate (float t)
   {
-    return new PVector(myStartPoint.x + myDirectionVector.x * t, 
-                       myStartPoint.y + myDirectionVector.y * t, 
+    return new PVector(myStartPoint.x + myDirectionVector.x * t,
+                       myStartPoint.y + myDirectionVector.y * t,
                        myStartPoint.z + myDirectionVector.z * t);
   }
 
@@ -81,8 +81,8 @@ public class Ray
   {
     return myDirectionVector.get();
   }
-  
-  
+
+
   /**
    * For debugging purposes.
    */
