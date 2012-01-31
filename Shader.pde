@@ -62,11 +62,14 @@ public class Lambertian extends Shader
       PVector l = PVector.sub(light.getPosition(), data.hitPoint);
       l.normalize();
       PVector lcolor = light.getColor();
-      float factor = max(0, l.dot(data.normalVector));
+      PVector n = data.normalVector;
+      n.normalize();
+      float factor = max(0, l.dot(n));
       resultColor.x += kd.x * lcolor.x * factor;
-      resultColor.x += kd.y * lcolor.y * factor;
-      resultColor.x += kd.z * lcolor.z * factor;
+      resultColor.y += kd.y * lcolor.y * factor;
+      resultColor.z += kd.z * lcolor.z * factor;
     }
+
     return resultColor;
   }
 
@@ -125,10 +128,11 @@ public class Phong extends Shader
       PVector lcolor = light.getColor();
       float nlfactor = max(0, data.normalVector.dot(l));
       float nhfactor = pow(max(0, data.normalVector.dot(h)), myExponent);
-      resultColor.x += ks.x * lcolor.x * nhfactor + kd.x * lcolor.x * nlfactor;
-      resultColor.x += ks.y * lcolor.y * nhfactor + kd.y * lcolor.y * nlfactor;
-      resultColor.x += ks.z * lcolor.z * nhfactor + kd.z * lcolor.z * nlfactor;
+      resultColor.x += (ks.x * nhfactor + kd.x * nlfactor) * lcolor.x;
+      resultColor.y += (ks.y * nhfactor + kd.y * nlfactor) * lcolor.y;
+      resultColor.z += (ks.z * nhfactor + kd.z * nlfactor) * lcolor.z;
     }
+
     return resultColor;
   }
 
