@@ -114,8 +114,21 @@ public class Phong extends Shader
   public PVector shade (IntersectionData data, Scene scene)
   {
     // TODO: Complete this function
-    PVector resultColor = mySpecularColor.get();
-
+    PVector resultColor = new PVector(0, 0, 0);
+    PVector kd = myDiffuseColor.get();
+    PVector ks = mySpecularColor.get();
+    for (Light light : scene.getLights()) {
+      PVector l = PVector.sub(light.getPosition(), data.hitPoint);
+      l.normalize();
+      PVector h = PVector.add(PVector.mult(data.cameraRay.getDirection(), -1), l);
+      h.normalize();
+      PVector lcolor = light.getColor();
+      float nlfactor = max(0, data.normalVector.dot(l));
+      float nhfactor = pow(max(0, data.normalVector.dot(h)), myExponent);
+      resultColor.x += ks.x * lcolor.x * nhfactor + kd.x * lcolor.x * nlfactor;
+      resultColor.x += ks.y * lcolor.y * nhfactor + kd.y * lcolor.y * nlfactor;
+      resultColor.x += ks.z * lcolor.z * nhfactor + kd.z * lcolor.z * nlfactor;
+    }
     return resultColor;
   }
 
