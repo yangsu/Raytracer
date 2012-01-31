@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--  A blue box sitting on a floor.
+ -->
+<scene>
+  <camera>
+    <position>10 4.8 6</position>
+    <direction>-5 -2.4 -3</direction>
+    <viewUp>0 1 0</viewUp>
+    <imagePlaneNormal>5 2.4 3</imagePlaneNormal>
+    <imagePlane>4 4 6</imagePlane>
+  </camera>
+
+  <light>
+    <position>4 5 -3</position>
+    <color>1 1 1</color>
+  </light>
+  <light>
+    <position>-4 3 5</position>
+    <color>.7 .7 .7</color>
+  </light>
+
+  <shader name="blue" type="Lambertian">
+    <diffuseColor>.2 .3 1</diffuseColor>
+  </shader>
+  <shader name="gray" type="Glazed">
+    <diffuseColor>.5 .5 .5</diffuseColor>
+  </shader>
+
+  <surface type="Box">
+    <shader ref="blue" />
+    <minPoint>-1 -1 -1</minPoint>
+    <maxPoint>1 1 1</maxPoint>
+  </surface>
+  <surface type="Box">
+    <shader ref="gray" />
+    <minPoint>-5 -1.1 -6</minPoint>
+    <maxPoint>5 -1 6</maxPoint>
+  </surface>
+</scene>

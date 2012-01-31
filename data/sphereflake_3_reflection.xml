@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Level 3 of a recursively generated sphere structure.
+-->
+<scene>
+  <camera>
+    <position>2 2 6</position>
+    <direction>-0.30 -0.30 -0.90</direction>
+    <viewUp>0 1 0</viewUp>
+    <imagePlaneNormal>0.30 0.30 0.90</imagePlaneNormal>
+    <imagePlane>1 1 1</imagePlane>
+  </camera>
+
+  <light>
+    <position>2.15 0.30 -1.88</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.02 1.97 0.67</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.62 1.91 2.17</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>2.47 0.65 -2.30</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.47 -1.06 0.87</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.54 -1.07 1.81</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.59 1.94 1.08</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.52 1.30 0.16</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.03 0.02 -1.47</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>2.14 -1.75 0.81</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.35 0.05 1.39</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>2.10 -2.06 2.09</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.24 2.04 2.44</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.73 1.88 1.41</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.07 2.30 1.42</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.95 2.23 -1.17</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.81 2.22 2.32</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-1.63 2.14 2.36</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-2.22 1.05 1.84</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-0.56 0.31 1.88</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-1.61 1.26 0.63</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.87 1 -1.69</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-1.59 1.44 1.79</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.84 2.13 1.84</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.22 1.68 0.30</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.37 1.28 0.24</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.57 -2.06 1.91</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-0.52 1.48 1.14</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.29 1.30 0.58</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-2.30 1.79 0.07</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-0.70 1.04 1.71</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.36 1.74 0.54</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+
+  <shader name="0" type="Glazed">
+     <diffuseColor>0.57 0.22 0.61</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="0" />
+    <radius>1.0</radius>
+    <center>0 0 0</center>
+  </surface>
+  <shader name="1" type="Glazed">
+     <diffuseColor>0.43 0.56 0.35</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="1" />
+    <radius>0.5</radius>
+    <center>1.50 0 0</center>
+  </surface>
+  <shader name="2" type="Glazed">
+     <diffuseColor>0.43 0.29 0.35</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="2" />
+    <radius>0.25</radius>
+    <center>2.25 0 0</center>
+  </surface>
+  <shader name="3" type="Glazed">
+     <diffuseColor>0.93 0.88 0.40</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="3" />
+    <radius>0.25</radius>
+    <center>1.50 0.75 0</center>
+  </surface>
+  <shader name="4" type="Glazed">
+     <diffuseColor>0.65 0.82 0.82</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="4" />
+    <radius>0.25</radius>
+    <center>1.50 -0.75 0</center>
+  </surface>
+  <shader name="5" type="Glazed">
+     <diffuseColor>0.50 0.32 0.37</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="5" />
+    <radius>0.25</radius>
+    <center>1.50 0 0.75</center>
+  </surface>
+  <shader name="6" type="Glazed">
+     <diffuseColor>0.36 0.72 0.87</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="6" />
+    <radius>0.25</radius>
+    <center>1.50 0 -0.75</center>
+  </surface>
+  <shader name="7" type="Glazed">
+     <diffuseColor>0.67 0.64 0.49</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="7" />
+    <radius>0.5</radius>
+    <center>-1.50 0 0</center>
+  </surface>
+  <shader name="8" type="Glazed">
+     <diffuseColor>0.82 0.71 0.80</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="8" />
+    <radius>0.25</radius>
+    <center>-2.25 0 0</center>
+  </surface>
+  <shader name="9" type="Glazed">
+     <diffuseColor>0.74 0.52 0.57</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="9" />
+    <radius>0.25</radius>
+    <center>-1.50 0.75 0</center>
+  </surface>
+  <shader name="10" type="Glazed">
+     <diffuseColor>0.29 0.98 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="10" />
+    <radius>0.25</radius>
+    <center>-1.50 -0.75 0</center>
+  </surface>
+  <shader name="11" type="Glazed">
+     <diffuseColor>0.20 0.97 0.31</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="11" />
+    <radius>0.25</radius>
+    <center>-1.50 0 0.75</center>
+  </surface>
+  <shader name="12" type="Glazed">
+     <diffuseColor>0.31 0.73 0.53</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="12" />
+    <radius>0.25</radius>
+    <center>-1.50 0 -0.75</center>
+  </surface>
+  <shader name="13" type="Glazed">
+     <diffuseColor>0.60 0.51 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="13" />
+    <radius>0.5</radius>
+    <center>0 1.50 0</center>
+  </surface>
+  <shader name="14" type="Glazed">
+     <diffuseColor>0.56 0.90 0.64</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="14" />
+    <radius>0.25</radius>
+    <center>0.75 1.50 0</center>
+  </surface>
+  <shader name="15" type="Glazed">
+     <diffuseColor>0.65 0.77 0.61</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="15" />
+    <radius>0.25</radius>
+    <center>-0.75 1.50 0</center>
+  </surface>
+  <shader name="16" type="Glazed">
+     <diffuseColor>0.25 0.20 0.87</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="16" />
+    <radius>0.25</radius>
+    <center>0 2.25 0</center>
+  </surface>
+  <shader name="17" type="Glazed">
+     <diffuseColor>0.89 0.96 1</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="17" />
+    <radius>0.25</radius>
+    <center>0 1.50 0.75</center>
+  </surface>
+  <shader name="18" type="Glazed">
+     <diffuseColor>0.47 0.97 0.38</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="18" />
+    <radius>0.25</radius>
+    <center>0 1.50 -0.75</center>
+  </surface>
+  <shader name="19" type="Glazed">
+     <diffuseColor>0.25 0.26 0.32</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="19" />
+    <radius>0.5</radius>
+    <center>0 -1.50 0</center>
+  </surface>
+  <shader name="20" type="Glazed">
+     <diffuseColor>0.37 0.99 0.72</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="20" />
+    <radius>0.25</radius>
+    <center>0.75 -1.50 0</center>
+  </surface>
+  <shader name="21" type="Glazed">
+     <diffuseColor>0.68 0.90 0.43</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="21" />
+    <radius>0.25</radius>
+    <center>-0.75 -1.50 0</center>
+  </surface>
+  <shader name="22" type="Glazed">
+     <diffuseColor>0.76 0.28 0.66</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="22" />
+    <radius>0.25</radius>
+    <center>0 -2.25 0</center>
+  </surface>
+  <shader name="23" type="Glazed">
+     <diffuseColor>0.56 0.33 0.58</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="23" />
+    <radius>0.25</radius>
+    <center>0 -1.50 0.75</center>
+  </surface>
+  <shader name="24" type="Glazed">
+     <diffuseColor>0.39 0.77 0.26</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="24" />
+    <radius>0.25</radius>
+    <center>0 -1.50 -0.75</center>
+  </surface>
+  <shader name="25" type="Glazed">
+     <diffuseColor>0.65 0.24 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="25" />
+    <radius>0.5</radius>
+    <center>0 0 1.50</center>
+  </surface>
+  <shader name="26" type="Glazed">
+     <diffuseColor>0.64 0.91 0.53</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="26" />
+    <radius>0.25</radius>
+    <center>0.75 0 1.50</center>
+  </surface>
+  <shader name="27" type="Glazed">
+     <diffuseColor>0.31 0.64 0.81</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="27" />
+    <radius>0.25</radius>
+    <center>-0.75 0 1.50</center>
+  </surface>
+  <shader name="28" type="Glazed">
+     <diffuseColor>0.56 0.20 0.31</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="28" />
+    <radius>0.25</radius>
+    <center>0 0.75 1.50</center>
+  </surface>
+  <shader name="29" type="Glazed">
+     <diffuseColor>0.49 0.28 0.50</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="29" />
+    <radius>0.25</radius>
+    <center>0 -0.75 1.50</center>
+  </surface>
+  <shader name="30" type="Glazed">
+     <diffuseColor>0.98 0.35 0.34</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="30" />
+    <radius>0.25</radius>
+    <center>0 0 2.25</center>
+  </surface>
+  <shader name="31" type="Glazed">
+     <diffuseColor>0.57 0.92 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="31" />
+    <radius>0.5</radius>
+    <center>0 0 -1.50</center>
+  </surface>
+  <shader name="32" type="Glazed">
+     <diffuseColor>0.25 0.97 0.44</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="32" />
+    <radius>0.25</radius>
+    <center>0.75 0 -1.50</center>
+  </surface>
+  <shader name="33" type="Glazed">
+     <diffuseColor>0.88 0.39 0.45</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="33" />
+    <radius>0.25</radius>
+    <center>-0.75 0 -1.50</center>
+  </surface>
+  <shader name="34" type="Glazed">
+     <diffuseColor>0.35 0.49 0.66</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="34" />
+    <radius>0.25</radius>
+    <center>0 0.75 -1.50</center>
+  </surface>
+  <shader name="35" type="Glazed">
+     <diffuseColor>0.94 0.85 0.56</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="35" />
+    <radius>0.25</radius>
+    <center>0 -0.75 -1.50</center>
+  </surface>
+  <shader name="36" type="Glazed">
+     <diffuseColor>0.27 0.34 0.76</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="36" />
+    <radius>0.25</radius>
+    <center>0 0 -2.25</center>
+  </surface>
+</scene>

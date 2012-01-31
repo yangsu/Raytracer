@@ -1,0 +1,1639 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Level 4 of a recursively generated sphere structure.
+-->
+<scene>
+  <camera>
+    <position>2 2 6</position>
+    <direction>-0.30 -0.30 -0.90</direction>
+    <viewUp>0 1 0</viewUp>
+    <imagePlaneNormal>0.30 0.30 0.90</imagePlaneNormal>
+    <imagePlane>1 1 1</imagePlane>
+  </camera>
+
+  <light>
+    <position>2.15 0.30 -1.88</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.02 1.97 0.67</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.62 1.91 2.17</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>2.47 0.65 -2.30</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.47 -1.06 0.87</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.54 -1.07 1.81</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.59 1.94 1.08</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.52 1.30 0.16</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.03 0.02 -1.47</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>2.14 -1.75 0.81</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.35 0.05 1.39</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>2.10 -2.06 2.09</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.24 2.04 2.44</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.73 1.88 1.41</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.07 2.30 1.42</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.95 2.23 -1.17</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.81 2.22 2.32</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-1.63 2.14 2.36</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-2.22 1.05 1.84</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-0.56 0.31 1.88</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-1.61 1.26 0.63</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.87 1 -1.69</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-1.59 1.44 1.79</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.84 2.13 1.84</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.22 1.68 0.30</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.37 1.28 0.24</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.57 -2.06 1.91</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-0.52 1.48 1.14</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>0.29 1.30 0.58</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-2.30 1.79 0.07</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>-0.70 1.04 1.71</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+  <light>
+    <position>1.36 1.74 0.54</position>
+    <color>0.13 0.13 0.13</color>
+  </light>
+
+  <shader name="0" type="Lambertian">
+     <diffuseColor>0.57 0.22 0.61</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="0" />
+    <radius>1.0</radius>
+    <center>0 0 0</center>
+  </surface>
+  <shader name="1" type="Lambertian">
+     <diffuseColor>0.43 0.56 0.35</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="1" />
+    <radius>0.5</radius>
+    <center>1.50 0 0</center>
+  </surface>
+  <shader name="2" type="Lambertian">
+     <diffuseColor>0.43 0.29 0.35</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="2" />
+    <radius>0.25</radius>
+    <center>2.25 0 0</center>
+  </surface>
+  <shader name="3" type="Lambertian">
+     <diffuseColor>0.93 0.88 0.40</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="3" />
+    <radius>0.125</radius>
+    <center>2.62 0 0</center>
+  </surface>
+  <shader name="4" type="Lambertian">
+     <diffuseColor>0.65 0.82 0.82</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="4" />
+    <radius>0.125</radius>
+    <center>2.25 0.38 0</center>
+  </surface>
+  <shader name="5" type="Lambertian">
+     <diffuseColor>0.50 0.32 0.37</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="5" />
+    <radius>0.125</radius>
+    <center>2.25 -0.38 0</center>
+  </surface>
+  <shader name="6" type="Lambertian">
+     <diffuseColor>0.36 0.72 0.87</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="6" />
+    <radius>0.125</radius>
+    <center>2.25 0 0.38</center>
+  </surface>
+  <shader name="7" type="Lambertian">
+     <diffuseColor>0.67 0.64 0.49</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="7" />
+    <radius>0.125</radius>
+    <center>2.25 0 -0.38</center>
+  </surface>
+  <shader name="8" type="Lambertian">
+     <diffuseColor>0.82 0.71 0.80</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="8" />
+    <radius>0.25</radius>
+    <center>1.50 0.75 0</center>
+  </surface>
+  <shader name="9" type="Lambertian">
+     <diffuseColor>0.74 0.52 0.57</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="9" />
+    <radius>0.125</radius>
+    <center>1.88 0.75 0</center>
+  </surface>
+  <shader name="10" type="Lambertian">
+     <diffuseColor>0.29 0.98 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="10" />
+    <radius>0.125</radius>
+    <center>1.12 0.75 0</center>
+  </surface>
+  <shader name="11" type="Lambertian">
+     <diffuseColor>0.20 0.97 0.31</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="11" />
+    <radius>0.125</radius>
+    <center>1.50 1.12 0</center>
+  </surface>
+  <shader name="12" type="Lambertian">
+     <diffuseColor>0.31 0.73 0.53</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="12" />
+    <radius>0.125</radius>
+    <center>1.50 0.75 0.38</center>
+  </surface>
+  <shader name="13" type="Lambertian">
+     <diffuseColor>0.60 0.51 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="13" />
+    <radius>0.125</radius>
+    <center>1.50 0.75 -0.38</center>
+  </surface>
+  <shader name="14" type="Lambertian">
+     <diffuseColor>0.56 0.90 0.64</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="14" />
+    <radius>0.25</radius>
+    <center>1.50 -0.75 0</center>
+  </surface>
+  <shader name="15" type="Lambertian">
+     <diffuseColor>0.65 0.77 0.61</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="15" />
+    <radius>0.125</radius>
+    <center>1.88 -0.75 0</center>
+  </surface>
+  <shader name="16" type="Lambertian">
+     <diffuseColor>0.25 0.20 0.87</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="16" />
+    <radius>0.125</radius>
+    <center>1.12 -0.75 0</center>
+  </surface>
+  <shader name="17" type="Lambertian">
+     <diffuseColor>0.89 0.96 1</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="17" />
+    <radius>0.125</radius>
+    <center>1.50 -1.12 0</center>
+  </surface>
+  <shader name="18" type="Lambertian">
+     <diffuseColor>0.47 0.97 0.38</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="18" />
+    <radius>0.125</radius>
+    <center>1.50 -0.75 0.38</center>
+  </surface>
+  <shader name="19" type="Lambertian">
+     <diffuseColor>0.25 0.26 0.32</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="19" />
+    <radius>0.125</radius>
+    <center>1.50 -0.75 -0.38</center>
+  </surface>
+  <shader name="20" type="Lambertian">
+     <diffuseColor>0.37 0.99 0.72</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="20" />
+    <radius>0.25</radius>
+    <center>1.50 0 0.75</center>
+  </surface>
+  <shader name="21" type="Lambertian">
+     <diffuseColor>0.68 0.90 0.43</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="21" />
+    <radius>0.125</radius>
+    <center>1.88 0 0.75</center>
+  </surface>
+  <shader name="22" type="Lambertian">
+     <diffuseColor>0.76 0.28 0.66</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="22" />
+    <radius>0.125</radius>
+    <center>1.12 0 0.75</center>
+  </surface>
+  <shader name="23" type="Lambertian">
+     <diffuseColor>0.56 0.33 0.58</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="23" />
+    <radius>0.125</radius>
+    <center>1.50 0.38 0.75</center>
+  </surface>
+  <shader name="24" type="Lambertian">
+     <diffuseColor>0.39 0.77 0.26</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="24" />
+    <radius>0.125</radius>
+    <center>1.50 -0.38 0.75</center>
+  </surface>
+  <shader name="25" type="Lambertian">
+     <diffuseColor>0.65 0.24 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="25" />
+    <radius>0.125</radius>
+    <center>1.50 0 1.12</center>
+  </surface>
+  <shader name="26" type="Lambertian">
+     <diffuseColor>0.64 0.91 0.53</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="26" />
+    <radius>0.25</radius>
+    <center>1.50 0 -0.75</center>
+  </surface>
+  <shader name="27" type="Lambertian">
+     <diffuseColor>0.31 0.64 0.81</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="27" />
+    <radius>0.125</radius>
+    <center>1.88 0 -0.75</center>
+  </surface>
+  <shader name="28" type="Lambertian">
+     <diffuseColor>0.56 0.20 0.31</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="28" />
+    <radius>0.125</radius>
+    <center>1.12 0 -0.75</center>
+  </surface>
+  <shader name="29" type="Lambertian">
+     <diffuseColor>0.49 0.28 0.50</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="29" />
+    <radius>0.125</radius>
+    <center>1.50 0.38 -0.75</center>
+  </surface>
+  <shader name="30" type="Lambertian">
+     <diffuseColor>0.98 0.35 0.34</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="30" />
+    <radius>0.125</radius>
+    <center>1.50 -0.38 -0.75</center>
+  </surface>
+  <shader name="31" type="Lambertian">
+     <diffuseColor>0.57 0.92 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="31" />
+    <radius>0.125</radius>
+    <center>1.50 0 -1.12</center>
+  </surface>
+  <shader name="32" type="Lambertian">
+     <diffuseColor>0.25 0.97 0.44</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="32" />
+    <radius>0.5</radius>
+    <center>-1.50 0 0</center>
+  </surface>
+  <shader name="33" type="Lambertian">
+     <diffuseColor>0.88 0.39 0.45</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="33" />
+    <radius>0.25</radius>
+    <center>-2.25 0 0</center>
+  </surface>
+  <shader name="34" type="Lambertian">
+     <diffuseColor>0.35 0.49 0.66</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="34" />
+    <radius>0.125</radius>
+    <center>-2.62 0 0</center>
+  </surface>
+  <shader name="35" type="Lambertian">
+     <diffuseColor>0.94 0.85 0.56</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="35" />
+    <radius>0.125</radius>
+    <center>-2.25 0.38 0</center>
+  </surface>
+  <shader name="36" type="Lambertian">
+     <diffuseColor>0.27 0.34 0.76</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="36" />
+    <radius>0.125</radius>
+    <center>-2.25 -0.38 0</center>
+  </surface>
+  <shader name="37" type="Lambertian">
+     <diffuseColor>0.25 0.96 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="37" />
+    <radius>0.125</radius>
+    <center>-2.25 0 0.38</center>
+  </surface>
+  <shader name="38" type="Lambertian">
+     <diffuseColor>0.62 0.60 0.46</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="38" />
+    <radius>0.125</radius>
+    <center>-2.25 0 -0.38</center>
+  </surface>
+  <shader name="39" type="Lambertian">
+     <diffuseColor>0.73 0.60 0.73</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="39" />
+    <radius>0.25</radius>
+    <center>-1.50 0.75 0</center>
+  </surface>
+  <shader name="40" type="Lambertian">
+     <diffuseColor>0.87 0.58 0.82</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="40" />
+    <radius>0.125</radius>
+    <center>-1.12 0.75 0</center>
+  </surface>
+  <shader name="41" type="Lambertian">
+     <diffuseColor>0.51 0.42 0.93</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="41" />
+    <radius>0.125</radius>
+    <center>-1.88 0.75 0</center>
+  </surface>
+  <shader name="42" type="Lambertian">
+     <diffuseColor>0.91 0.55 0.25</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="42" />
+    <radius>0.125</radius>
+    <center>-1.50 1.12 0</center>
+  </surface>
+  <shader name="43" type="Lambertian">
+     <diffuseColor>0.53 0.75 0.93</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="43" />
+    <radius>0.125</radius>
+    <center>-1.50 0.75 0.38</center>
+  </surface>
+  <shader name="44" type="Lambertian">
+     <diffuseColor>0.24 0.68 0.60</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="44" />
+    <radius>0.125</radius>
+    <center>-1.50 0.75 -0.38</center>
+  </surface>
+  <shader name="45" type="Lambertian">
+     <diffuseColor>0.58 0.24 0.82</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="45" />
+    <radius>0.25</radius>
+    <center>-1.50 -0.75 0</center>
+  </surface>
+  <shader name="46" type="Lambertian">
+     <diffuseColor>0.68 0.93 0.73</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="46" />
+    <radius>0.125</radius>
+    <center>-1.12 -0.75 0</center>
+  </surface>
+  <shader name="47" type="Lambertian">
+     <diffuseColor>0.76 0.35 0.83</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="47" />
+    <radius>0.125</radius>
+    <center>-1.88 -0.75 0</center>
+  </surface>
+  <shader name="48" type="Lambertian">
+     <diffuseColor>0.27 0.27 0.38</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="48" />
+    <radius>0.125</radius>
+    <center>-1.50 -1.12 0</center>
+  </surface>
+  <shader name="49" type="Lambertian">
+     <diffuseColor>0.80 0.29 0.98</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="49" />
+    <radius>0.125</radius>
+    <center>-1.50 -0.75 0.38</center>
+  </surface>
+  <shader name="50" type="Lambertian">
+     <diffuseColor>0.34 0.81 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="50" />
+    <radius>0.125</radius>
+    <center>-1.50 -0.75 -0.38</center>
+  </surface>
+  <shader name="51" type="Lambertian">
+     <diffuseColor>0.43 0.31 0.24</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="51" />
+    <radius>0.25</radius>
+    <center>-1.50 0 0.75</center>
+  </surface>
+  <shader name="52" type="Lambertian">
+     <diffuseColor>0.75 0.82 0.80</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="52" />
+    <radius>0.125</radius>
+    <center>-1.12 0 0.75</center>
+  </surface>
+  <shader name="53" type="Lambertian">
+     <diffuseColor>0.53 0.45 0.94</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="53" />
+    <radius>0.125</radius>
+    <center>-1.88 0 0.75</center>
+  </surface>
+  <shader name="54" type="Lambertian">
+     <diffuseColor>0.34 0.76 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="54" />
+    <radius>0.125</radius>
+    <center>-1.50 0.38 0.75</center>
+  </surface>
+  <shader name="55" type="Lambertian">
+     <diffuseColor>0.81 0.65 0.64</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="55" />
+    <radius>0.125</radius>
+    <center>-1.50 -0.38 0.75</center>
+  </surface>
+  <shader name="56" type="Lambertian">
+     <diffuseColor>0.29 0.98 0.64</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="56" />
+    <radius>0.125</radius>
+    <center>-1.50 0 1.12</center>
+  </surface>
+  <shader name="57" type="Lambertian">
+     <diffuseColor>0.42 0.52 0.74</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="57" />
+    <radius>0.25</radius>
+    <center>-1.50 0 -0.75</center>
+  </surface>
+  <shader name="58" type="Lambertian">
+     <diffuseColor>0.26 0.31 0.40</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="58" />
+    <radius>0.125</radius>
+    <center>-1.12 0 -0.75</center>
+  </surface>
+  <shader name="59" type="Lambertian">
+     <diffuseColor>0.80 0.82 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="59" />
+    <radius>0.125</radius>
+    <center>-1.88 0 -0.75</center>
+  </surface>
+  <shader name="60" type="Lambertian">
+     <diffuseColor>0.85 0.28 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="60" />
+    <radius>0.125</radius>
+    <center>-1.50 0.38 -0.75</center>
+  </surface>
+  <shader name="61" type="Lambertian">
+     <diffuseColor>0.51 0.25 0.82</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="61" />
+    <radius>0.125</radius>
+    <center>-1.50 -0.38 -0.75</center>
+  </surface>
+  <shader name="62" type="Lambertian">
+     <diffuseColor>0.93 0.71 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="62" />
+    <radius>0.125</radius>
+    <center>-1.50 0 -1.12</center>
+  </surface>
+  <shader name="63" type="Lambertian">
+     <diffuseColor>0.98 0.88 0.37</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="63" />
+    <radius>0.5</radius>
+    <center>0 1.50 0</center>
+  </surface>
+  <shader name="64" type="Lambertian">
+     <diffuseColor>0.49 0.76 0.59</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="64" />
+    <radius>0.25</radius>
+    <center>0.75 1.50 0</center>
+  </surface>
+  <shader name="65" type="Lambertian">
+     <diffuseColor>0.84 0.96 0.40</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="65" />
+    <radius>0.125</radius>
+    <center>1.12 1.50 0</center>
+  </surface>
+  <shader name="66" type="Lambertian">
+     <diffuseColor>0.65 0.49 0.44</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="66" />
+    <radius>0.125</radius>
+    <center>0.75 1.88 0</center>
+  </surface>
+  <shader name="67" type="Lambertian">
+     <diffuseColor>0.70 0.44 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="67" />
+    <radius>0.125</radius>
+    <center>0.75 1.12 0</center>
+  </surface>
+  <shader name="68" type="Lambertian">
+     <diffuseColor>0.64 0.98 0.24</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="68" />
+    <radius>0.125</radius>
+    <center>0.75 1.50 0.38</center>
+  </surface>
+  <shader name="69" type="Lambertian">
+     <diffuseColor>0.27 0.58 0.46</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="69" />
+    <radius>0.125</radius>
+    <center>0.75 1.50 -0.38</center>
+  </surface>
+  <shader name="70" type="Lambertian">
+     <diffuseColor>0.92 0.83 0.39</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="70" />
+    <radius>0.25</radius>
+    <center>-0.75 1.50 0</center>
+  </surface>
+  <shader name="71" type="Lambertian">
+     <diffuseColor>0.80 0.32 0.45</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="71" />
+    <radius>0.125</radius>
+    <center>-1.12 1.50 0</center>
+  </surface>
+  <shader name="72" type="Lambertian">
+     <diffuseColor>0.21 0.49 0.41</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="72" />
+    <radius>0.125</radius>
+    <center>-0.75 1.88 0</center>
+  </surface>
+  <shader name="73" type="Lambertian">
+     <diffuseColor>0.51 0.93 0.27</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="73" />
+    <radius>0.125</radius>
+    <center>-0.75 1.12 0</center>
+  </surface>
+  <shader name="74" type="Lambertian">
+     <diffuseColor>0.96 0.71 0.36</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="74" />
+    <radius>0.125</radius>
+    <center>-0.75 1.50 0.38</center>
+  </surface>
+  <shader name="75" type="Lambertian">
+     <diffuseColor>0.96 0.42 0.48</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="75" />
+    <radius>0.125</radius>
+    <center>-0.75 1.50 -0.38</center>
+  </surface>
+  <shader name="76" type="Lambertian">
+     <diffuseColor>0.99 0.59 0.98</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="76" />
+    <radius>0.25</radius>
+    <center>0 2.25 0</center>
+  </surface>
+  <shader name="77" type="Lambertian">
+     <diffuseColor>0.67 0.81 0.28</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="77" />
+    <radius>0.125</radius>
+    <center>0.38 2.25 0</center>
+  </surface>
+  <shader name="78" type="Lambertian">
+     <diffuseColor>0.89 0.96 0.29</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="78" />
+    <radius>0.125</radius>
+    <center>-0.38 2.25 0</center>
+  </surface>
+  <shader name="79" type="Lambertian">
+     <diffuseColor>0.25 0.47 0.30</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="79" />
+    <radius>0.125</radius>
+    <center>0 2.62 0</center>
+  </surface>
+  <shader name="80" type="Lambertian">
+     <diffuseColor>0.38 0.68 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="80" />
+    <radius>0.125</radius>
+    <center>0 2.25 0.38</center>
+  </surface>
+  <shader name="81" type="Lambertian">
+     <diffuseColor>0.27 0.56 0.94</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="81" />
+    <radius>0.125</radius>
+    <center>0 2.25 -0.38</center>
+  </surface>
+  <shader name="82" type="Lambertian">
+     <diffuseColor>0.73 0.96 0.85</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="82" />
+    <radius>0.25</radius>
+    <center>0 1.50 0.75</center>
+  </surface>
+  <shader name="83" type="Lambertian">
+     <diffuseColor>0.58 0.22 0.47</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="83" />
+    <radius>0.125</radius>
+    <center>0.38 1.50 0.75</center>
+  </surface>
+  <shader name="84" type="Lambertian">
+     <diffuseColor>0.88 0.95 0.81</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="84" />
+    <radius>0.125</radius>
+    <center>-0.38 1.50 0.75</center>
+  </surface>
+  <shader name="85" type="Lambertian">
+     <diffuseColor>0.69 0.66 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="85" />
+    <radius>0.125</radius>
+    <center>0 1.88 0.75</center>
+  </surface>
+  <shader name="86" type="Lambertian">
+     <diffuseColor>0.82 0.92 0.30</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="86" />
+    <radius>0.125</radius>
+    <center>0 1.12 0.75</center>
+  </surface>
+  <shader name="87" type="Lambertian">
+     <diffuseColor>0.42 0.59 0.24</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="87" />
+    <radius>0.125</radius>
+    <center>0 1.50 1.12</center>
+  </surface>
+  <shader name="88" type="Lambertian">
+     <diffuseColor>0.24 0.47 0.64</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="88" />
+    <radius>0.25</radius>
+    <center>0 1.50 -0.75</center>
+  </surface>
+  <shader name="89" type="Lambertian">
+     <diffuseColor>0.84 0.43 0.21</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="89" />
+    <radius>0.125</radius>
+    <center>0.38 1.50 -0.75</center>
+  </surface>
+  <shader name="90" type="Lambertian">
+     <diffuseColor>0.88 0.38 0.64</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="90" />
+    <radius>0.125</radius>
+    <center>-0.38 1.50 -0.75</center>
+  </surface>
+  <shader name="91" type="Lambertian">
+     <diffuseColor>0.77 0.85 0.54</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="91" />
+    <radius>0.125</radius>
+    <center>0 1.88 -0.75</center>
+  </surface>
+  <shader name="92" type="Lambertian">
+     <diffuseColor>0.60 0.87 0.66</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="92" />
+    <radius>0.125</radius>
+    <center>0 1.12 -0.75</center>
+  </surface>
+  <shader name="93" type="Lambertian">
+     <diffuseColor>0.26 0.72 0.54</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="93" />
+    <radius>0.125</radius>
+    <center>0 1.50 -1.12</center>
+  </surface>
+  <shader name="94" type="Lambertian">
+     <diffuseColor>0.43 0.50 0.35</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="94" />
+    <radius>0.5</radius>
+    <center>0 -1.50 0</center>
+  </surface>
+  <shader name="95" type="Lambertian">
+     <diffuseColor>0.42 0.78 0.79</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="95" />
+    <radius>0.25</radius>
+    <center>0.75 -1.50 0</center>
+  </surface>
+  <shader name="96" type="Lambertian">
+     <diffuseColor>0.87 0.54 0.76</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="96" />
+    <radius>0.125</radius>
+    <center>1.12 -1.50 0</center>
+  </surface>
+  <shader name="97" type="Lambertian">
+     <diffuseColor>0.44 0.49 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="97" />
+    <radius>0.125</radius>
+    <center>0.75 -1.12 0</center>
+  </surface>
+  <shader name="98" type="Lambertian">
+     <diffuseColor>0.96 0.99 0.33</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="98" />
+    <radius>0.125</radius>
+    <center>0.75 -1.88 0</center>
+  </surface>
+  <shader name="99" type="Lambertian">
+     <diffuseColor>0.45 0.33 0.23</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="99" />
+    <radius>0.125</radius>
+    <center>0.75 -1.50 0.38</center>
+  </surface>
+  <shader name="100" type="Lambertian">
+     <diffuseColor>0.35 0.20 0.64</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="100" />
+    <radius>0.125</radius>
+    <center>0.75 -1.50 -0.38</center>
+  </surface>
+  <shader name="101" type="Lambertian">
+     <diffuseColor>0.27 0.44 0.55</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="101" />
+    <radius>0.25</radius>
+    <center>-0.75 -1.50 0</center>
+  </surface>
+  <shader name="102" type="Lambertian">
+     <diffuseColor>0.45 0.27 0.59</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="102" />
+    <radius>0.125</radius>
+    <center>-1.12 -1.50 0</center>
+  </surface>
+  <shader name="103" type="Lambertian">
+     <diffuseColor>0.27 0.44 0.87</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="103" />
+    <radius>0.125</radius>
+    <center>-0.75 -1.12 0</center>
+  </surface>
+  <shader name="104" type="Lambertian">
+     <diffuseColor>0.68 0.58 0.40</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="104" />
+    <radius>0.125</radius>
+    <center>-0.75 -1.88 0</center>
+  </surface>
+  <shader name="105" type="Lambertian">
+     <diffuseColor>0.82 0.60 0.86</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="105" />
+    <radius>0.125</radius>
+    <center>-0.75 -1.50 0.38</center>
+  </surface>
+  <shader name="106" type="Lambertian">
+     <diffuseColor>1 0.35 0.86</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="106" />
+    <radius>0.125</radius>
+    <center>-0.75 -1.50 -0.38</center>
+  </surface>
+  <shader name="107" type="Lambertian">
+     <diffuseColor>0.31 0.51 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="107" />
+    <radius>0.25</radius>
+    <center>0 -2.25 0</center>
+  </surface>
+  <shader name="108" type="Lambertian">
+     <diffuseColor>0.32 0.94 0.84</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="108" />
+    <radius>0.125</radius>
+    <center>0.38 -2.25 0</center>
+  </surface>
+  <shader name="109" type="Lambertian">
+     <diffuseColor>0.83 0.81 0.75</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="109" />
+    <radius>0.125</radius>
+    <center>-0.38 -2.25 0</center>
+  </surface>
+  <shader name="110" type="Lambertian">
+     <diffuseColor>0.68 0.90 0.78</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="110" />
+    <radius>0.125</radius>
+    <center>0 -2.62 0</center>
+  </surface>
+  <shader name="111" type="Lambertian">
+     <diffuseColor>0.91 0.26 0.68</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="111" />
+    <radius>0.125</radius>
+    <center>0 -2.25 0.38</center>
+  </surface>
+  <shader name="112" type="Lambertian">
+     <diffuseColor>0.89 0.82 0.30</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="112" />
+    <radius>0.125</radius>
+    <center>0 -2.25 -0.38</center>
+  </surface>
+  <shader name="113" type="Lambertian">
+     <diffuseColor>0.47 0.79 0.34</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="113" />
+    <radius>0.25</radius>
+    <center>0 -1.50 0.75</center>
+  </surface>
+  <shader name="114" type="Lambertian">
+     <diffuseColor>0.55 0.27 0.66</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="114" />
+    <radius>0.125</radius>
+    <center>0.38 -1.50 0.75</center>
+  </surface>
+  <shader name="115" type="Lambertian">
+     <diffuseColor>0.40 0.48 0.86</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="115" />
+    <radius>0.125</radius>
+    <center>-0.38 -1.50 0.75</center>
+  </surface>
+  <shader name="116" type="Lambertian">
+     <diffuseColor>0.29 0.63 0.77</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="116" />
+    <radius>0.125</radius>
+    <center>0 -1.12 0.75</center>
+  </surface>
+  <shader name="117" type="Lambertian">
+     <diffuseColor>0.76 0.30 0.43</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="117" />
+    <radius>0.125</radius>
+    <center>0 -1.88 0.75</center>
+  </surface>
+  <shader name="118" type="Lambertian">
+     <diffuseColor>0.44 0.67 0.45</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="118" />
+    <radius>0.125</radius>
+    <center>0 -1.50 1.12</center>
+  </surface>
+  <shader name="119" type="Lambertian">
+     <diffuseColor>0.53 0.65 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="119" />
+    <radius>0.25</radius>
+    <center>0 -1.50 -0.75</center>
+  </surface>
+  <shader name="120" type="Lambertian">
+     <diffuseColor>0.82 0.90 0.56</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="120" />
+    <radius>0.125</radius>
+    <center>0.38 -1.50 -0.75</center>
+  </surface>
+  <shader name="121" type="Lambertian">
+     <diffuseColor>0.71 0.89 0.26</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="121" />
+    <radius>0.125</radius>
+    <center>-0.38 -1.50 -0.75</center>
+  </surface>
+  <shader name="122" type="Lambertian">
+     <diffuseColor>0.76 0.60 0.92</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="122" />
+    <radius>0.125</radius>
+    <center>0 -1.12 -0.75</center>
+  </surface>
+  <shader name="123" type="Lambertian">
+     <diffuseColor>0.70 0.43 0.52</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="123" />
+    <radius>0.125</radius>
+    <center>0 -1.88 -0.75</center>
+  </surface>
+  <shader name="124" type="Lambertian">
+     <diffuseColor>0.46 0.26 0.93</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="124" />
+    <radius>0.125</radius>
+    <center>0 -1.50 -1.12</center>
+  </surface>
+  <shader name="125" type="Lambertian">
+     <diffuseColor>0.86 0.56 0.41</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="125" />
+    <radius>0.5</radius>
+    <center>0 0 1.50</center>
+  </surface>
+  <shader name="126" type="Lambertian">
+     <diffuseColor>0.70 0.81 0.95</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="126" />
+    <radius>0.25</radius>
+    <center>0.75 0 1.50</center>
+  </surface>
+  <shader name="127" type="Lambertian">
+     <diffuseColor>0.25 0.62 0.20</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="127" />
+    <radius>0.125</radius>
+    <center>1.12 0 1.50</center>
+  </surface>
+  <shader name="128" type="Lambertian">
+     <diffuseColor>0.61 0.49 0.69</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="128" />
+    <radius>0.125</radius>
+    <center>0.75 0.38 1.50</center>
+  </surface>
+  <shader name="129" type="Lambertian">
+     <diffuseColor>0.45 0.31 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="129" />
+    <radius>0.125</radius>
+    <center>0.75 -0.38 1.50</center>
+  </surface>
+  <shader name="130" type="Lambertian">
+     <diffuseColor>0.80 0.82 0.28</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="130" />
+    <radius>0.125</radius>
+    <center>0.75 0 1.88</center>
+  </surface>
+  <shader name="131" type="Lambertian">
+     <diffuseColor>0.39 0.25 0.43</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="131" />
+    <radius>0.125</radius>
+    <center>0.75 0 1.12</center>
+  </surface>
+  <shader name="132" type="Lambertian">
+     <diffuseColor>0.96 0.74 0.52</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="132" />
+    <radius>0.25</radius>
+    <center>-0.75 0 1.50</center>
+  </surface>
+  <shader name="133" type="Lambertian">
+     <diffuseColor>0.48 0.57 0.94</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="133" />
+    <radius>0.125</radius>
+    <center>-1.12 0 1.50</center>
+  </surface>
+  <shader name="134" type="Lambertian">
+     <diffuseColor>0.50 0.97 0.87</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="134" />
+    <radius>0.125</radius>
+    <center>-0.75 0.38 1.50</center>
+  </surface>
+  <shader name="135" type="Lambertian">
+     <diffuseColor>0.44 0.64 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="135" />
+    <radius>0.125</radius>
+    <center>-0.75 -0.38 1.50</center>
+  </surface>
+  <shader name="136" type="Lambertian">
+     <diffuseColor>0.56 0.84 0.43</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="136" />
+    <radius>0.125</radius>
+    <center>-0.75 0 1.88</center>
+  </surface>
+  <shader name="137" type="Lambertian">
+     <diffuseColor>0.94 0.60 0.65</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="137" />
+    <radius>0.125</radius>
+    <center>-0.75 0 1.12</center>
+  </surface>
+  <shader name="138" type="Lambertian">
+     <diffuseColor>0.45 0.47 0.74</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="138" />
+    <radius>0.25</radius>
+    <center>0 0.75 1.50</center>
+  </surface>
+  <shader name="139" type="Lambertian">
+     <diffuseColor>0.25 0.35 0.49</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="139" />
+    <radius>0.125</radius>
+    <center>0.38 0.75 1.50</center>
+  </surface>
+  <shader name="140" type="Lambertian">
+     <diffuseColor>0.81 0.82 0.89</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="140" />
+    <radius>0.125</radius>
+    <center>-0.38 0.75 1.50</center>
+  </surface>
+  <shader name="141" type="Lambertian">
+     <diffuseColor>0.73 0.77 0.62</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="141" />
+    <radius>0.125</radius>
+    <center>0 1.12 1.50</center>
+  </surface>
+  <shader name="142" type="Lambertian">
+     <diffuseColor>0.79 0.34 0.62</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="142" />
+    <radius>0.125</radius>
+    <center>0 0.75 1.88</center>
+  </surface>
+  <shader name="143" type="Lambertian">
+     <diffuseColor>0.89 0.39 0.82</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="143" />
+    <radius>0.125</radius>
+    <center>0 0.75 1.12</center>
+  </surface>
+  <shader name="144" type="Lambertian">
+     <diffuseColor>0.50 0.93 0.24</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="144" />
+    <radius>0.25</radius>
+    <center>0 -0.75 1.50</center>
+  </surface>
+  <shader name="145" type="Lambertian">
+     <diffuseColor>0.75 0.48 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="145" />
+    <radius>0.125</radius>
+    <center>0.38 -0.75 1.50</center>
+  </surface>
+  <shader name="146" type="Lambertian">
+     <diffuseColor>0.73 0.72 0.85</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="146" />
+    <radius>0.125</radius>
+    <center>-0.38 -0.75 1.50</center>
+  </surface>
+  <shader name="147" type="Lambertian">
+     <diffuseColor>0.20 0.68 0.39</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="147" />
+    <radius>0.125</radius>
+    <center>0 -1.12 1.50</center>
+  </surface>
+  <shader name="148" type="Lambertian">
+     <diffuseColor>0.41 0.71 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="148" />
+    <radius>0.125</radius>
+    <center>0 -0.75 1.88</center>
+  </surface>
+  <shader name="149" type="Lambertian">
+     <diffuseColor>0.44 0.35 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="149" />
+    <radius>0.125</radius>
+    <center>0 -0.75 1.12</center>
+  </surface>
+  <shader name="150" type="Lambertian">
+     <diffuseColor>0.76 0.93 0.81</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="150" />
+    <radius>0.25</radius>
+    <center>0 0 2.25</center>
+  </surface>
+  <shader name="151" type="Lambertian">
+     <diffuseColor>0.28 0.82 0.88</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="151" />
+    <radius>0.125</radius>
+    <center>0.38 0 2.25</center>
+  </surface>
+  <shader name="152" type="Lambertian">
+     <diffuseColor>0.91 0.69 0.39</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="152" />
+    <radius>0.125</radius>
+    <center>-0.38 0 2.25</center>
+  </surface>
+  <shader name="153" type="Lambertian">
+     <diffuseColor>0.34 0.31 0.61</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="153" />
+    <radius>0.125</radius>
+    <center>0 0.38 2.25</center>
+  </surface>
+  <shader name="154" type="Lambertian">
+     <diffuseColor>0.25 0.92 0.81</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="154" />
+    <radius>0.125</radius>
+    <center>0 -0.38 2.25</center>
+  </surface>
+  <shader name="155" type="Lambertian">
+     <diffuseColor>0.69 0.89 0.31</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="155" />
+    <radius>0.125</radius>
+    <center>0 0 2.62</center>
+  </surface>
+  <shader name="156" type="Lambertian">
+     <diffuseColor>0.75 0.62 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="156" />
+    <radius>0.5</radius>
+    <center>0 0 -1.50</center>
+  </surface>
+  <shader name="157" type="Lambertian">
+     <diffuseColor>0.91 0.79 0.41</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="157" />
+    <radius>0.25</radius>
+    <center>0.75 0 -1.50</center>
+  </surface>
+  <shader name="158" type="Lambertian">
+     <diffuseColor>0.98 0.86 0.36</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="158" />
+    <radius>0.125</radius>
+    <center>1.12 0 -1.50</center>
+  </surface>
+  <shader name="159" type="Lambertian">
+     <diffuseColor>0.75 0.29 0.97</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="159" />
+    <radius>0.125</radius>
+    <center>0.75 0.38 -1.50</center>
+  </surface>
+  <shader name="160" type="Lambertian">
+     <diffuseColor>0.76 0.32 0.26</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="160" />
+    <radius>0.125</radius>
+    <center>0.75 -0.38 -1.50</center>
+  </surface>
+  <shader name="161" type="Lambertian">
+     <diffuseColor>0.74 0.25 0.25</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="161" />
+    <radius>0.125</radius>
+    <center>0.75 0 -1.12</center>
+  </surface>
+  <shader name="162" type="Lambertian">
+     <diffuseColor>0.42 0.82 0.79</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="162" />
+    <radius>0.125</radius>
+    <center>0.75 0 -1.88</center>
+  </surface>
+  <shader name="163" type="Lambertian">
+     <diffuseColor>0.62 0.58 0.94</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="163" />
+    <radius>0.25</radius>
+    <center>-0.75 0 -1.50</center>
+  </surface>
+  <shader name="164" type="Lambertian">
+     <diffuseColor>0.70 0.29 0.49</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="164" />
+    <radius>0.125</radius>
+    <center>-1.12 0 -1.50</center>
+  </surface>
+  <shader name="165" type="Lambertian">
+     <diffuseColor>0.24 0.96 0.75</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="165" />
+    <radius>0.125</radius>
+    <center>-0.75 0.38 -1.50</center>
+  </surface>
+  <shader name="166" type="Lambertian">
+     <diffuseColor>0.45 0.88 0.92</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="166" />
+    <radius>0.125</radius>
+    <center>-0.75 -0.38 -1.50</center>
+  </surface>
+  <shader name="167" type="Lambertian">
+     <diffuseColor>0.93 0.31 0.75</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="167" />
+    <radius>0.125</radius>
+    <center>-0.75 0 -1.12</center>
+  </surface>
+  <shader name="168" type="Lambertian">
+     <diffuseColor>0.58 0.80 0.48</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="168" />
+    <radius>0.125</radius>
+    <center>-0.75 0 -1.88</center>
+  </surface>
+  <shader name="169" type="Lambertian">
+     <diffuseColor>0.98 0.69 0.42</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="169" />
+    <radius>0.25</radius>
+    <center>0 0.75 -1.50</center>
+  </surface>
+  <shader name="170" type="Lambertian">
+     <diffuseColor>0.68 0.32 0.57</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="170" />
+    <radius>0.125</radius>
+    <center>0.38 0.75 -1.50</center>
+  </surface>
+  <shader name="171" type="Lambertian">
+     <diffuseColor>0.67 0.35 0.69</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="171" />
+    <radius>0.125</radius>
+    <center>-0.38 0.75 -1.50</center>
+  </surface>
+  <shader name="172" type="Lambertian">
+     <diffuseColor>0.24 0.64 0.90</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="172" />
+    <radius>0.125</radius>
+    <center>0 1.12 -1.50</center>
+  </surface>
+  <shader name="173" type="Lambertian">
+     <diffuseColor>0.31 1 0.66</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="173" />
+    <radius>0.125</radius>
+    <center>0 0.75 -1.12</center>
+  </surface>
+  <shader name="174" type="Lambertian">
+     <diffuseColor>0.63 0.52 0.59</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="174" />
+    <radius>0.125</radius>
+    <center>0 0.75 -1.88</center>
+  </surface>
+  <shader name="175" type="Lambertian">
+     <diffuseColor>0.87 0.47 0.77</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="175" />
+    <radius>0.25</radius>
+    <center>0 -0.75 -1.50</center>
+  </surface>
+  <shader name="176" type="Lambertian">
+     <diffuseColor>0.59 0.55 0.26</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="176" />
+    <radius>0.125</radius>
+    <center>0.38 -0.75 -1.50</center>
+  </surface>
+  <shader name="177" type="Lambertian">
+     <diffuseColor>0.80 0.24 0.22</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="177" />
+    <radius>0.125</radius>
+    <center>-0.38 -0.75 -1.50</center>
+  </surface>
+  <shader name="178" type="Lambertian">
+     <diffuseColor>0.69 0.65 0.81</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="178" />
+    <radius>0.125</radius>
+    <center>0 -1.12 -1.50</center>
+  </surface>
+  <shader name="179" type="Lambertian">
+     <diffuseColor>0.46 0.83 0.46</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="179" />
+    <radius>0.125</radius>
+    <center>0 -0.75 -1.12</center>
+  </surface>
+  <shader name="180" type="Lambertian">
+     <diffuseColor>0.31 0.22 0.45</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="180" />
+    <radius>0.125</radius>
+    <center>0 -0.75 -1.88</center>
+  </surface>
+  <shader name="181" type="Lambertian">
+     <diffuseColor>0.25 0.96 0.90</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="181" />
+    <radius>0.25</radius>
+    <center>0 0 -2.25</center>
+  </surface>
+  <shader name="182" type="Lambertian">
+     <diffuseColor>0.77 0.99 0.94</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="182" />
+    <radius>0.125</radius>
+    <center>0.38 0 -2.25</center>
+  </surface>
+  <shader name="183" type="Lambertian">
+     <diffuseColor>0.94 0.96 0.40</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="183" />
+    <radius>0.125</radius>
+    <center>-0.38 0 -2.25</center>
+  </surface>
+  <shader name="184" type="Lambertian">
+     <diffuseColor>0.26 0.93 0.93</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="184" />
+    <radius>0.125</radius>
+    <center>0 0.38 -2.25</center>
+  </surface>
+  <shader name="185" type="Lambertian">
+     <diffuseColor>0.79 0.67 0.97</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="185" />
+    <radius>0.125</radius>
+    <center>0 -0.38 -2.25</center>
+  </surface>
+  <shader name="186" type="Lambertian">
+     <diffuseColor>0.55 0.80 0.65</diffuseColor>
+  </shader>
+  <surface type="Sphere">
+    <shader ref="186" />
+    <radius>0.125</radius>
+    <center>0 0 -2.62</center>
+  </surface>
+</scene>
