@@ -50,7 +50,13 @@ public class Camera
   public Ray getRay (float xRatio, float yRatio)
   {
     // TODO: Complete this function
-    return new Ray(myViewPoint, new PVector(0, 0, 1));
+    PVector result = PVector.mult(myZaxis, -myPlaneSize.z);
+    float u = -myPlaneSize.x/2 + myPlaneSize.x * xRatio; // need 0.5 offset?
+    float v = -myPlaneSize.y/2 + myPlaneSize.y * yRatio; // need 0.5 offset?
+    result.add(PVector.mult(myXaxis, u));
+    result.add(PVector.mult(myYaxis, v));
+    result.normalize();
+    return new Ray(myViewPoint, result);
   }
 
 
@@ -65,7 +71,7 @@ public class Camera
   private void init ()
   {
     myYaxis = myViewUp;
-    myZaxis = -myPlaneNormal;
+    myZaxis = PVector.mult(myPlaneNormal, -1);
     myXaxis = myYaxis.cross(myZaxis);
     myXaxis.normalize();
   }
