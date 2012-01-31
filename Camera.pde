@@ -64,7 +64,10 @@ public class Camera
    */
   private void init ()
   {
-    // TODO: Complete this function
+    myYaxis = myViewUp;
+    myZaxis = -myPlaneNormal;
+    myXaxis = myYaxis.cross(myZaxis);
+    myXaxis.normalize();
   }
 
 
