@@ -104,7 +104,9 @@ public class Sphere extends Surface
   public PVector getNormal (PVector surfacePoint)
   {
     // TODO: Complete this function
-    PVector result = new PVector();
+    PVector result = new PVector(surfacePoint.x - myCenter.x,
+                                 surfacePoint.y - myCenter.y,
+                                 surfacePoint.z - myCenter.z);
     result.normalize();
     return result;
   }
