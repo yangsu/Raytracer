@@ -74,6 +74,26 @@ public class Sphere extends Surface
   public float intersects (Ray ray)
   {
     // TODO: Complete this function
+    PVector d = ray.getDirection();
+    PVector e = ray.getOrigin();
+    float dd = d.dot(d);
+    PVector ec = PVector.sub(e, myCenter);
+    float dec = d.dot(ec);
+    float det = sq(dec)-dd*(ec.dot(ec)-sq(myRadius));
+    if (det > 0) {
+      float sqrtdet = sqrt(det);
+      // inters[0] = PVector.add(e, PVector.mult(d, (-dec-sqrtdet)/dd));
+      // norms[0] = PVector.div(PVector.mult(inters[0], myCenter), myRadius);
+      // inters[1] = PVector.add(e, PVector.mult(d, (-dec+sqrtdet)/dd));
+      // norms[1] = PVector.div(PVector.mult(inters[1], myCenter), myRadius);
+      return (-dec-sqrtdet)/dd;
+    }
+    else if (det == 0) {
+      // inters[0] = PVector.add(e, PVector.mult(d, -dec/dd));
+      // norms[0] = PVector.div(PVector.mult(inters[0], myCenter), myRadius);
+      return -dec/dd;
+    }
+    else
       return -Integer.MAX_VALUE;
   }
 
