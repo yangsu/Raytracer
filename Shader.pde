@@ -56,15 +56,16 @@ public class Lambertian extends Shader
   public PVector shade (IntersectionData data, Scene scene)
   {
     // TODO: Complete this function
-    PVector resultColor = myDiffuseColor.get();
+    PVector resultColor = new PVector(0, 0, 0);
+    PVector kd = myDiffuseColor.get();
     for (Light light : scene.getLights()) {
       PVector l = PVector.sub(light.getPosition(), data.hitPoint);
       l.normalize();
       PVector lcolor = light.getColor();
       float factor = max(0, l.dot(data.normalVector));
-      resultColor.x *= lcolor.x * factor;
-      resultColor.y *= lcolor.y * factor;
-      resultColor.z *= lcolor.z * factor;
+      resultColor.x += kd.x * lcolor.x * factor;
+      resultColor.x += kd.y * lcolor.y * factor;
+      resultColor.x += kd.z * lcolor.z * factor;
     }
     return resultColor;
   }
@@ -114,6 +115,7 @@ public class Phong extends Shader
   {
     // TODO: Complete this function
     PVector resultColor = mySpecularColor.get();
+
     return resultColor;
   }
 
