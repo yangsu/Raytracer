@@ -57,6 +57,12 @@ public class Lambertian extends Shader
   {
     // TODO: Complete this function
     PVector resultColor = myDiffuseColor.get();
+    for (Light light : scene.getLights()) {
+      PVector l = PVector.sub(light.getPosition(), data.hitPoint);
+      l.normalize();
+      PVector lcolor = light.getColor();
+      resultColor.mult(max(0, l.dot(data.normalVector)));
+    }
     return resultColor;
   }
 
