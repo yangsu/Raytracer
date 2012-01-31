@@ -61,7 +61,10 @@ public class Lambertian extends Shader
       PVector l = PVector.sub(light.getPosition(), data.hitPoint);
       l.normalize();
       PVector lcolor = light.getColor();
-      resultColor.mult(max(0, l.dot(data.normalVector)));
+      float factor = max(0, l.dot(data.normalVector));
+      resultColor.x *= lcolor.x * factor;
+      resultColor.y *= lcolor.y * factor;
+      resultColor.z *= lcolor.z * factor;
     }
     return resultColor;
   }
