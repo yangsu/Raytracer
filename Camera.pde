@@ -70,10 +70,11 @@ public class Camera
    */
   private void init ()
   {
-    myYaxis = myViewUp;
-    myZaxis = PVector.mult(myPlaneNormal, -1);
-    myXaxis = myYaxis.cross(myZaxis);
+    myZaxis = myPlaneNormal;
+    myXaxis = myZaxis.cross(myViewUp);
     myXaxis.normalize();
+    myYaxis = myXaxis.cross(myZaxis);
+    myYaxis.normalize();
   }
 
 
