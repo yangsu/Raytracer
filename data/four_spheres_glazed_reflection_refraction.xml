@@ -19,6 +19,9 @@
 
   <shader name="red" type="Lambertian">
     <diffuseColor>1 .3 .2</diffuseColor>
+    <specularColor>0.5 0.5 0.5</specularColor>
+    <exponent>50</exponent>
+    <reflectivity>0.2</reflectivity>
   </shader>
   <shader name="green" type="Reflective">
     <diffuseColor>.2 1 .3</diffuseColor>
@@ -26,11 +29,8 @@
     <reflectivity>0.5</reflectivity>
     <exponent>50</exponent>
   </shader>
-  <shader name="blue" type="Glazed">
+  <shader name="blue" type="Lambertian">
     <diffuseColor>.2 .3 1</diffuseColor>
-    <specularColor>0.5 0.5 0.5</specularColor>
-    <exponent>50</exponent>
-    <reflectivity>0.2</reflectivity>
   </shader>
   <shader name="gray" type="Glazed">
     <diffuseColor>.5 .5 .5</diffuseColor>
@@ -41,6 +41,7 @@
     <shader ref="red" />
     <radius>1</radius>
     <center>0 1 0.866</center>
+    <refractionIndex>1.2</refractionIndex>
   </surface>
   <surface type="Sphere">
     <shader ref="green" />

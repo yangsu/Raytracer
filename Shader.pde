@@ -191,7 +191,8 @@ public class Glazed extends Lambertian
   public String toString ()
   {
     return "Glazed Shader = " +
-           "\n      Diffuse Color = " + myDiffuseColor;
+           "\n      Diffuse Color = " + myDiffuseColor +
+           "\n      Reflectivity = " + myReflectivity;
   }
 }
 
@@ -238,6 +239,7 @@ public class Reflective extends Phong
     return "Reflective Shader = " +
            "\n      Diffuse Color = " + myDiffuseColor +
            "\n      Specular Color = " + myDiffuseColor +
-           "\n      exponent = " + myExponent;
+           "\n      exponent = " + myExponent +
+           "\n      Reflectivity = " + myReflectivity;
   }
 }
