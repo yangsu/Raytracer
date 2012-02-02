@@ -176,9 +176,9 @@ public class Glazed extends Shader
     PVector n = data.normalVector;
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
     r.normalize();
-    Ray reflectionRay = new Ray(data.hitPoint, r).getOffset();
+    Ray rRay = new Ray(data.hitPoint, r).getOffset();
+    PVector resultColor = dotmult(scene.rayColor(rRay), myDiffuseColor);
 
-    PVector resultColor = PVector.mult(scene.rayColor(reflectionRay), 0.1);
     PVector kd = myDiffuseColor.get();
     for (Light light : scene.getLights()) {
       PVector l = PVector.sub(light.getPosition(), data.hitPoint);

@@ -1,5 +1,5 @@
 // change to test different scenes
-final String SCENE_FILE = "four_spheres.xml";
+final String SCENE_FILE = "sphereflake_2_reflection.xml";
 // change to distinguish background from shadows
 final color BACKGROUND_COLOR = color(1, 0, 1);
 final PVector BACKGROUND_COLOR_VECTOR = new PVector(0, 0, 0);
@@ -52,5 +52,9 @@ void mouseClicked ()
   scene.renderPixel(float(mouseX) / width, float(mouseY) / height);
   println("Done.");
   debug = false;
+}
+
+PVector dotmult (PVector a, PVector b) {
+  return new PVector(a.x*b.x, a.y*b.y, a.z*b.z);
 }
 
