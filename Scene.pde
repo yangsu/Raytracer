@@ -13,7 +13,6 @@ public class Scene
   /** The list of materials in the scene . */
   private Map<String, Shader> myShaders;
 
-
   /**
    * Create an empty scene.
    */
@@ -23,7 +22,6 @@ public class Scene
     mySurfaces = new ArrayList<Surface>();
     myShaders = new HashMap<String, Shader>();
   }
-
 
   /**
    * Returns color along a single ray from camera through given x and y values.
@@ -51,7 +49,6 @@ public class Scene
       return BACKGROUND_COLOR_VECTOR;
     }
   }
-
 
   /**
    * Returns the first intersection of given ray with surfaces in this scene.
@@ -82,7 +79,6 @@ public class Scene
     }
   }
 
-
   /**
    * Returns true if any intersection is found between given ray and surfaces in this scene.
    *
@@ -101,7 +97,6 @@ public class Scene
     return false;
   }
 
-
   /**
    * Returns the scene's lights.
    */
@@ -110,7 +105,6 @@ public class Scene
     return myLights;
   }
 
-
   /**
    * Returns the scene's surfaces.
    */
@@ -118,7 +112,6 @@ public class Scene
   {
     return mySurfaces;
   }
-
 
 
   // BUGBUG: yuck --- ugly parsing code below
@@ -148,7 +141,6 @@ public class Scene
       }
     }
   }
-
 
   /** Set scene's camera. */
   private void setCamera (XMLElement[] properties)

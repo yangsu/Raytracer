@@ -15,7 +15,6 @@ public class Ray
   /** The normalized direction in which the ray travels. */
   private final PVector myDirectionVector;
 
-
   /**
    * Construct ray from data.
    */
@@ -25,7 +24,6 @@ public class Ray
     myDirectionVector = directionVector.get();
   }
 
-
   /**
    * Returns a copy of this ray.
    */
@@ -34,7 +32,6 @@ public class Ray
     return new Ray(getOrigin(), getDirection());
   }
 
-
   /**
    * Returns a copy of this ray whose origin is slightly offset.
    */
@@ -42,7 +39,6 @@ public class Ray
   {
     return new Ray(getOffsetOrigin(), getDirection());
   }
-
 
   /**
    * Returns point in space which corresponds to a distance t
@@ -55,7 +51,6 @@ public class Ray
                        myStartPoint.z + myDirectionVector.z * t);
   }
 
-
   /**
    * Returns the origin.
    */
@@ -63,7 +58,6 @@ public class Ray
   {
     return myStartPoint.get();
   }
-
 
   /**
    * Returns the origin offset by a small amount.
@@ -73,7 +67,6 @@ public class Ray
     return PVector.add(myStartPoint, PVector.mult(myDirectionVector, Ray.EPSILON));
   }
 
-
   /**
    * Returns the direction.
    */
@@ -81,7 +74,6 @@ public class Ray
   {
     return myDirectionVector.get();
   }
-
 
   /**
    * For debugging purposes.

@@ -19,7 +19,6 @@ public class Camera
   private PVector myYaxis;
   private PVector myZaxis;
 
-
   /**
    * Construct camera from data.
    */
@@ -41,7 +40,6 @@ public class Camera
     init();
   }
 
-
   /**
    * Returns ray that starts at camera and travels through given pixel,
    * the pixel is expressed as a percentage of its distance along the
@@ -59,7 +57,6 @@ public class Camera
     return new Ray(myViewPoint, result);
   }
 
-
   /**
    * Computes the axes of the view space in relation to the image plane.
    * The camera's view is determined by the position and a view window.
@@ -76,7 +73,6 @@ public class Camera
     myYaxis = myXaxis.cross(myZaxis);
     myYaxis.normalize();
   }
-
 
   /**
    * For debugging purposes.

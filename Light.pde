@@ -12,7 +12,6 @@ public class Light
   /** Color of the light. */
   private final PVector myColor;
 
-
   /**
    * Construct camera from data.
    */
@@ -23,7 +22,6 @@ public class Light
     myColor = colr;
   }
 
-
   /**
    * Returns light's position in space.
    */
@@ -32,7 +30,6 @@ public class Light
     return myPosition.get();
   }
 
-
   /**
    * Returns light's color triple.
    */
@@ -40,7 +37,6 @@ public class Light
   {
     return myColor.get();
   }
-
 
   /**
    * Create a ray from intersection point to the light,
@@ -53,7 +49,6 @@ public class Light
     directionVector.normalize();
     return new Ray(startPoint, directionVector).getOffset();
   }
-
 
   /**
    * For debugging purposes.

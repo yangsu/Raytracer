@@ -7,7 +7,6 @@ public abstract class Shader
   /** The color of the surface. */
   protected final PVector myDiffuseColor;
 
-
   /**
    * Construct shader from data.
    */
@@ -16,14 +15,12 @@ public abstract class Shader
     myDiffuseColor = diffuse;
   }
 
-
   /**
    * Returns color for this material at the intersection described in data.
    * Scene is passed in to allow access to other lights and surfaces that might
    * be useful in computing color value (i.e., for shadows and reflections).
    */
   public abstract PVector shade (IntersectionData data, Scene scene);
-
 
   /**
    * Updates given color by adding given factor of the color to add.
@@ -45,7 +42,6 @@ public abstract class Shader
   }
 }
 
-
 /**
  * A Lambertian material scatters light equally in all directions.
  */
@@ -58,7 +54,6 @@ public class Lambertian extends Shader
   {
     super(diffuseColor);
   }
-
 
   /**
    * @see Shader#shade()
@@ -84,7 +79,6 @@ public class Lambertian extends Shader
     return resultColor;
   }
 
-
   /**
    * For debugging purposes.
    */
@@ -94,7 +88,6 @@ public class Lambertian extends Shader
            "\n      Diffuse Color = " + myDiffuseColor;
   }
 }
-
 
 /**
  * A Phong material uses the Modified Blinn-Phong model which is energy
@@ -108,7 +101,6 @@ public class Phong extends Shader
   /** The exponent controlling the sharpness of the specular reflection. */
   private final float myExponent;
 
-
   /**
    * Construct shader from data.
    */
@@ -120,7 +112,6 @@ public class Phong extends Shader
     mySpecularColor = specularColor;
     myExponent = exponent;
   }
-
 
   /**
    * @see Shader#shade()
@@ -149,7 +140,6 @@ public class Phong extends Shader
     return resultColor;
   }
 
-
   /**
    * For debugging purposes.
    */
@@ -161,7 +151,6 @@ public class Phong extends Shader
            "\n      exponent = " + myExponent;
   }
 }
-
 
 
 /**
@@ -206,7 +195,6 @@ public class Glazed extends Shader
 
     return resultColor;
   }
-
 
   /**
    * For debugging purposes.

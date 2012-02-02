@@ -15,7 +15,6 @@ public class IntersectionData
   /** The t value along the ray at which the intersection occurred. */
   public float t;
 
-
   /**
    * Construct intersection data from pieces.
    */
@@ -31,7 +30,6 @@ public class IntersectionData
     this.surface = surface;
     this.t = t;
   }
-
 
   /**
    * For debugging purposes.

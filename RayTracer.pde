@@ -13,7 +13,6 @@ boolean debug = false;
 // needs to be global to be used by all methods in this file
 Scene scene = new Scene();
 
-
 void setup ()
 {
   // smaller is faster, bigger for more detailed pictures
@@ -25,7 +24,6 @@ void setup ()
   // read XML configuration file
   scene.read(new XMLElement(this, SCENE_FILE));
 }
-
 
 void draw ()
 {
@@ -42,7 +40,6 @@ void draw ()
   }
   println("Done.");
 }
-
 
 // for debugging purposes, test shooting a single ray through the mouse location
 void mouseClicked ()
