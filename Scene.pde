@@ -203,6 +203,11 @@ public class Scene
                               (PVector)values.get("specularcolor"),
                               ((PVector)values.get("exponent")).x));
     }
+    else if (type.equalsIgnoreCase("glazed"))
+    {
+      myShaders.put(name,
+                    new Glazed((PVector)values.get("diffusecolor")));
+    }
   }
 
   /** Convert an XML string to component values. */

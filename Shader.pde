@@ -149,3 +149,58 @@ public class Phong extends Shader
   }
 }
 
+
+
+/**
+ * A Glazed material addes a layer of reflection on top of the Lambertian
+ * model.
+ */
+public class Glazed extends Shader
+{
+  /**
+   * Construct shader from data.
+   */
+  public Glazed (PVector diffuseColor)
+  {
+    super(diffuseColor);
+  }
+
+
+  /**
+   * @see Shader#shade()
+   */
+  public PVector shade (IntersectionData data, Scene scene)
+  {
+    // TODO: Complete this function
+    PVector d = data.cameraRay.getDirection();
+    PVector n = data.normalVector;
+    PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
+    r.normalize();
+    Ray reflectionRay = new Ray(data.hitPoint, r).getOffset();
+
+    PVector resultColor = PVector.mult(scene.rayColor(reflectionRay), 0.1);
+    PVector kd = myDiffuseColor.get();
+    for (Light light : scene.getLights()) {
+      PVector l = PVector.sub(light.getPosition(), data.hitPoint);
+      l.normalize();
+      PVector lcolor = light.getColor();
+      n = data.normalVector;
+      float factor = max(0, l.dot(n));
+      resultColor.x += kd.x * lcolor.x * factor;
+      resultColor.y += kd.y * lcolor.y * factor;
+      resultColor.z += kd.z * lcolor.z * factor;
+    }
+
+    return resultColor;
+  }
+
+
+  /**
+   * For debugging purposes.
+   */
+  public String toString ()
+  {
+    return "Glazed Shader = " +
+           "\n      Diffuse Color = " + myDiffuseColor;
+  }
+}
