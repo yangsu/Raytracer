@@ -180,8 +180,7 @@ public class Glazed extends Lambertian
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
-    PVector resultColor = dotmult(scene.rayColor(rRay),
-                            PVector.mult(myDiffuseColor, myReflectivity));
+    PVector resultColor = PVector.mult(scene.rayColor(rRay), myReflectivity);
     return PVector.add(resultColor, super.shade(data, scene));
   }
 
@@ -229,7 +228,6 @@ public class Reflective extends Phong
     PVector resultColor = dotmult(scene.rayColor(rRay),
                             PVector.mult(mySpecularColor, myReflectivity));
     return PVector.add(resultColor, super.shade(data, scene));
-    // return resultColor;
   }
 
   /**
@@ -284,7 +282,7 @@ public class Refractive extends Reflective
   public PVector shade (IntersectionData data, Scene scene)
   {
     // TODO: Add in resursion limits!
-    PVector s2 = refract(GLOBAL_IOR, myIOR, data.normalVector,
+    PVector s2 = refract(GLOBAL_IOR, myIOR, PVector.mult(data.normalVector, 1),
                          data.cameraRay.getDirection());
     Ray inRay = new Ray(data.hitPoint, s2).getOffset();
     IntersectionData data2 = scene.getClosestIntersection(inRay);
@@ -305,13 +303,15 @@ public class Refractive extends Reflective
 
       }
       // resultColor = scene.rayColor(outRay);
+
     }
     else {
       // println("surfaces is not closed");
       // resultColor = scene.rayColor(data2);
+      // return BACKGROUND_COLOR_VECTOR;
     }
     // return resultColor;
-    return PVector.add(resultColor, PVector.mult(super.shade(data, scene),0.5));
+        return PVector.add(PVector.mult(resultColor, 0.9), PVector.mult(super.shade(data, scene),0.1));
   }
   /**
    * For debugging purposes.
