@@ -37,7 +37,10 @@ public class Scene
   }
 
   public PVector rayColor (Ray ray) {
-    IntersectionData data = getClosestIntersection(ray);
+    return rayColor(getClosestIntersection(ray));
+  }
+
+  public PVector rayColor (IntersectionData data) {
     if (data != null)
     {
       if (debug) println(data);
@@ -208,6 +211,15 @@ public class Scene
                                    (PVector)values.get("specularcolor"),
                                    ((PVector)values.get("exponent")).x,
                                    ((PVector)values.get("reflectivity")).x));
+    }
+    else if (type.equalsIgnoreCase("refractive"))
+    {
+      myShaders.put(name,
+                    new Refractive((PVector)values.get("diffusecolor"),
+                                   (PVector)values.get("specularcolor"),
+                                   ((PVector)values.get("exponent")).x,
+                                   ((PVector)values.get("reflectivity")).x,
+                                   ((PVector)values.get("refractionindex")).x));
     }
   }
 

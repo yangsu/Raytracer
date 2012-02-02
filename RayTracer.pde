@@ -1,5 +1,5 @@
 // change to test different scenes
-final String SCENE_FILE = "sphereflake_2_reflection.xml";
+final String SCENE_FILE = "four_spheres_glazed_reflection_refraction.xml";
 // change to distinguish background from shadows
 final color BACKGROUND_COLOR = color(1, 0, 1);
 final PVector BACKGROUND_COLOR_VECTOR = new PVector(0, 0, 0);
@@ -7,6 +7,8 @@ final PVector BACKGROUND_COLOR_VECTOR = new PVector(0, 0, 0);
 final PVector AMBIENT_LIGHT_COLOR = new PVector(1, 1, 1);
 // change the intensity of the ambient light
 final float AMBIENT_LIGHT = 0.16;
+
+final float GLOBAL_IOR = 1.0;
 
 // change to print out debugging information while processing
 boolean debug = false;

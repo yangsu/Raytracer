@@ -202,7 +202,7 @@ public class Glazed extends Lambertian
  */
 public class Reflective extends Phong
 {
-  private float myReflectivity;
+  protected float myReflectivity;
   /**
    * Construct shader from data.
    */
@@ -229,8 +229,90 @@ public class Reflective extends Phong
     PVector resultColor = dotmult(scene.rayColor(rRay),
                             PVector.mult(mySpecularColor, myReflectivity));
     return PVector.add(resultColor, super.shade(data, scene));
+    // return resultColor;
   }
 
+  /**
+   * For debugging purposes.
+   */
+  public String toString ()
+  {
+    return "Reflective Shader = " +
+           "\n      Diffuse Color = " + myDiffuseColor +
+           "\n      Specular Color = " + myDiffuseColor +
+           "\n      exponent = " + myExponent +
+           "\n      Reflectivity = " + myReflectivity;
+  }
+}
+
+
+/**
+ * A Refractive material addes a layer of reflection on top of the Reflective
+ * model.
+ */
+public class Refractive extends Reflective
+{
+  private float myIOR;
+
+  public Refractive (PVector diffuseColor,
+                     PVector specularColor,
+                     float exponent,
+                     float reflectivity,
+                     float ior)
+  {
+    super(diffuseColor, specularColor, exponent, 0);
+    myIOR = ior;
+    PVector a = refract(1, 1.0, new PVector(0, 1, 0),
+                      new PVector(-1, 1, 0)
+                        );
+    println("-----------------------------------");
+    println(a);
+    println("-----------------------------------");
+  }
+
+  private PVector refract(float n1, float n2, PVector n, PVector s1) {
+    float c1 = -n.dot(s1);
+    float nn = n1 / n2;
+    float c2 = sqrt(1-sq(nn)*(1 - sq(c1)));
+    PVector s2 = PVector.add(PVector.mult(s1, nn), PVector.mult(n, nn*c1-c2));
+    s2.normalize();
+    return s2;
+  }
+  /**
+   * @see Shader#shade()
+   */
+  public PVector shade (IntersectionData data, Scene scene)
+  {
+    // TODO: Add in resursion limits!
+    PVector s2 = refract(GLOBAL_IOR, myIOR, data.normalVector,
+                         data.cameraRay.getDirection());
+    Ray inRay = new Ray(data.hitPoint, s2).getOffset();
+    IntersectionData data2 = scene.getClosestIntersection(inRay);
+    PVector resultColor = new PVector(0, 0, 0);
+    if (data2 != null)
+    {
+      s2 = refract(GLOBAL_IOR, myIOR, data2.normalVector,
+                   data2.cameraRay.getDirection());
+      Ray outRay = new Ray(data.hitPoint, s2).getOffset();
+      IntersectionData data3 = scene.getClosestIntersection(outRay);
+      if (data3 != null)
+      {
+         resultColor = scene.rayColor(data3);
+      }
+      else
+      {
+      // resultColor = scene.rayColor(data2);
+
+      }
+      // resultColor = scene.rayColor(outRay);
+    }
+    else {
+      // println("surfaces is not closed");
+      // resultColor = scene.rayColor(data2);
+    }
+    // return resultColor;
+    return PVector.add(resultColor, PVector.mult(super.shade(data, scene),0.5));
+  }
   /**
    * For debugging purposes.
    */
