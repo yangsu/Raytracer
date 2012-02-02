@@ -38,7 +38,7 @@ public class Scene
     return color(resultColor.x, resultColor.y, resultColor.z);
   }
 
-  public PVector rayColor(Ray ray) {
+  public PVector rayColor (Ray ray) {
     IntersectionData data = getClosestIntersection(ray);
     if (data != null)
     {

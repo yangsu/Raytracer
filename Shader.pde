@@ -33,6 +33,16 @@ public abstract class Shader
   {
     colorToUpdate.add(PVector.mult(colorToAdd, scaleFactor));
   }
+
+  /**
+   * Calculate whether there's shadow or not
+   */
+  public boolean isShadow (IntersectionData data, Scene scene, Light lg) {
+    PVector l = PVector.sub(lg.getPosition(), data.hitPoint);
+    l.normalize();
+    Ray sRay = new Ray(data.hitPoint, l).getOffset();
+    return scene.isAnyIntersection(sRay);
+  }
 }
 
 
@@ -59,14 +69,16 @@ public class Lambertian extends Shader
     PVector resultColor = new PVector(0, 0, 0);
     PVector kd = myDiffuseColor.get();
     for (Light light : scene.getLights()) {
-      PVector l = PVector.sub(light.getPosition(), data.hitPoint);
-      l.normalize();
-      PVector lcolor = light.getColor();
-      PVector n = data.normalVector;
-      n.normalize();
-      float factor = max(0, l.dot(n));
-      resultColor = PVector.add(resultColor,
-                      PVector.mult(dotmult(kd, lcolor), factor));
+      if (!isShadow(data, scene, light)) {
+        PVector l = PVector.sub(light.getPosition(), data.hitPoint);
+        l.normalize();
+        PVector lcolor = light.getColor();
+        PVector n = data.normalVector;
+        n.normalize();
+        float factor = max(0, l.dot(n));
+        resultColor = PVector.add(resultColor,
+                        PVector.mult(dotmult(kd, lcolor), factor));
+      }
     }
 
     return resultColor;
@@ -120,16 +132,18 @@ public class Phong extends Shader
     PVector kd = myDiffuseColor.get();
     PVector ks = mySpecularColor.get();
     for (Light light : scene.getLights()) {
-      PVector l = PVector.sub(light.getPosition(), data.hitPoint);
-      l.normalize();
-      PVector h = PVector.add(PVector.mult(data.cameraRay.getDirection(), -1), l);
-      h.normalize();
-      PVector lcolor = light.getColor();
-      float nlfactor = max(0, data.normalVector.dot(l));
-      float nhfactor = pow(max(0, data.normalVector.dot(h)), myExponent);
-      resultColor = PVector.add(resultColor, dotmult(
-                      PVector.add(PVector.mult(ks, nhfactor),
+      if (!isShadow(data, scene, light)) {
+        PVector l = PVector.sub(light.getPosition(), data.hitPoint);
+        l.normalize();
+        PVector h = PVector.add(PVector.mult(data.cameraRay.getDirection(), -1), l);
+        h.normalize();
+        PVector lcolor = light.getColor();
+        float nlfactor = max(0, data.normalVector.dot(l));
+        float nhfactor = pow(max(0, data.normalVector.dot(h)), myExponent);
+        resultColor = PVector.add(resultColor, dotmult(
+                        PVector.add(PVector.mult(ks, nhfactor),
                                   PVector.mult(kd, nlfactor)), lcolor));
+      }
     }
 
     return resultColor;
@@ -179,13 +193,15 @@ public class Glazed extends Shader
 
     PVector kd = myDiffuseColor.get();
     for (Light light : scene.getLights()) {
-      PVector l = PVector.sub(light.getPosition(), data.hitPoint);
-      l.normalize();
-      PVector lcolor = light.getColor();
-      n = data.normalVector;
-      float factor = max(0, l.dot(n));
-      resultColor = PVector.add(resultColor,
-                      PVector.mult(dotmult(kd, lcolor), factor));
+      if (!isShadow(data, scene, light)) {
+        PVector l = PVector.sub(light.getPosition(), data.hitPoint);
+        l.normalize();
+        PVector lcolor = light.getColor();
+        n = data.normalVector;
+        float factor = max(0, l.dot(n));
+        resultColor = PVector.add(resultColor,
+                        PVector.mult(dotmult(kd, lcolor), factor));
+      }
     }
 
     return resultColor;
