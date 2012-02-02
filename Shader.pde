@@ -97,9 +97,9 @@ public class Phong extends Shader
 {
   // These are read in from input file and do not change during rendering
   /** The color of the specular reflection. */
-  private final PVector mySpecularColor;
+  protected final PVector mySpecularColor;
   /** The exponent controlling the sharpness of the specular reflection. */
-  private final float myExponent;
+  protected final float myExponent;
 
   /**
    * Construct shader from data.
@@ -157,7 +157,7 @@ public class Phong extends Shader
  * A Glazed material addes a layer of reflection on top of the Lambertian
  * model.
  */
-public class Glazed extends Shader
+public class Glazed extends Lambertian
 {
   /**
    * Construct shader from data.
@@ -179,21 +179,7 @@ public class Glazed extends Shader
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
     PVector resultColor = dotmult(scene.rayColor(rRay), myDiffuseColor);
-
-    PVector kd = myDiffuseColor.get();
-    for (Light light : scene.getLights()) {
-      if (!isShadow(data, scene, light)) {
-        PVector l = PVector.sub(light.getPosition(), data.hitPoint);
-        l.normalize();
-        PVector lcolor = light.getColor();
-        n = data.normalVector;
-        float factor = max(0, l.dot(n));
-        resultColor = PVector.add(resultColor,
-                        PVector.mult(dotmult(kd, lcolor), factor));
-      }
-    }
-
-    return resultColor;
+    return PVector.add(resultColor, super.shade(data, scene));
   }
 
   /**
@@ -203,5 +189,48 @@ public class Glazed extends Shader
   {
     return "Glazed Shader = " +
            "\n      Diffuse Color = " + myDiffuseColor;
+  }
+}
+
+/**
+ * A Reflective material addes a layer of reflection on top of the Phong
+ * model.
+ */
+public class Reflective extends Phong
+{
+  /**
+   * Construct shader from data.
+   */
+  public Reflective (PVector diffuseColor,
+                     PVector specularColor,
+                     float exponent)
+  {
+    super(diffuseColor, specularColor, exponent);
+  }
+
+  /**
+   * @see Shader#shade()
+   */
+  public PVector shade (IntersectionData data, Scene scene)
+  {
+    // TODO: Add in resursion limits!
+    PVector d = data.cameraRay.getDirection();
+    PVector n = data.normalVector;
+    PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
+    r.normalize();
+    Ray rRay = new Ray(data.hitPoint, r).getOffset();
+    PVector resultColor = dotmult(scene.rayColor(rRay), mySpecularColor);
+    return PVector.add(resultColor, super.shade(data, scene));
+  }
+
+  /**
+   * For debugging purposes.
+   */
+  public String toString ()
+  {
+    return "Reflective Shader = " +
+           "\n      Diffuse Color = " + myDiffuseColor +
+           "\n      Specular Color = " + myDiffuseColor +
+           "\n      exponent = " + myExponent;
   }
 }

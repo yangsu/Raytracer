@@ -200,6 +200,13 @@ public class Scene
       myShaders.put(name,
                     new Glazed((PVector)values.get("diffusecolor")));
     }
+    else if (type.equalsIgnoreCase("reflective"))
+    {
+      myShaders.put(name,
+                    new Reflective((PVector)values.get("diffusecolor"),
+                                   (PVector)values.get("specularcolor"),
+                                   ((PVector)values.get("exponent")).x));
+    }
   }
 
   /** Convert an XML string to component values. */
