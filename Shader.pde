@@ -169,7 +169,7 @@ public class Glazed extends Shader
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    // TODO: Complete this function
+    // TODO: Add in resursion limits!
     PVector d = data.cameraRay.getDirection();
     PVector n = data.normalVector;
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
