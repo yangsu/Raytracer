@@ -198,14 +198,16 @@ public class Scene
     else if (type.equalsIgnoreCase("glazed"))
     {
       myShaders.put(name,
-                    new Glazed((PVector)values.get("diffusecolor")));
+                    new Glazed((PVector)values.get("diffusecolor"),
+                               ((PVector)values.get("reflectivity")).x));
     }
     else if (type.equalsIgnoreCase("reflective"))
     {
       myShaders.put(name,
                     new Reflective((PVector)values.get("diffusecolor"),
                                    (PVector)values.get("specularcolor"),
-                                   ((PVector)values.get("exponent")).x));
+                                   ((PVector)values.get("exponent")).x,
+                                   ((PVector)values.get("reflectivity")).x));
     }
   }
 

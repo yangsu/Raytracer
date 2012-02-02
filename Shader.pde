@@ -159,12 +159,14 @@ public class Phong extends Shader
  */
 public class Glazed extends Lambertian
 {
+  private float myReflectivity;
   /**
    * Construct shader from data.
    */
-  public Glazed (PVector diffuseColor)
+  public Glazed (PVector diffuseColor, float reflectivity)
   {
     super(diffuseColor);
+    myReflectivity = reflectivity;
   }
 
   /**
@@ -178,7 +180,8 @@ public class Glazed extends Lambertian
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
-    PVector resultColor = dotmult(scene.rayColor(rRay), myDiffuseColor);
+    PVector resultColor = dotmult(scene.rayColor(rRay),
+                            PVector.mult(myDiffuseColor, myReflectivity));
     return PVector.add(resultColor, super.shade(data, scene));
   }
 
@@ -198,14 +201,17 @@ public class Glazed extends Lambertian
  */
 public class Reflective extends Phong
 {
+  private float myReflectivity;
   /**
    * Construct shader from data.
    */
   public Reflective (PVector diffuseColor,
                      PVector specularColor,
-                     float exponent)
+                     float exponent,
+                     float reflectivity)
   {
     super(diffuseColor, specularColor, exponent);
+    myReflectivity = reflectivity;
   }
 
   /**
@@ -219,7 +225,8 @@ public class Reflective extends Phong
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
-    PVector resultColor = dotmult(scene.rayColor(rRay), mySpecularColor);
+    PVector resultColor = dotmult(scene.rayColor(rRay),
+                            PVector.mult(mySpecularColor, myReflectivity));
     return PVector.add(resultColor, super.shade(data, scene));
   }
 
