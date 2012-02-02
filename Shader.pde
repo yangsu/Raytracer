@@ -65,9 +65,8 @@ public class Lambertian extends Shader
       PVector n = data.normalVector;
       n.normalize();
       float factor = max(0, l.dot(n));
-      resultColor.x += kd.x * lcolor.x * factor;
-      resultColor.y += kd.y * lcolor.y * factor;
-      resultColor.z += kd.z * lcolor.z * factor;
+      resultColor = PVector.add(resultColor,
+                      PVector.mult(dotmult(kd, lcolor), factor));
     }
 
     return resultColor;
@@ -128,9 +127,9 @@ public class Phong extends Shader
       PVector lcolor = light.getColor();
       float nlfactor = max(0, data.normalVector.dot(l));
       float nhfactor = pow(max(0, data.normalVector.dot(h)), myExponent);
-      resultColor.x += (ks.x * nhfactor + kd.x * nlfactor) * lcolor.x;
-      resultColor.y += (ks.y * nhfactor + kd.y * nlfactor) * lcolor.y;
-      resultColor.z += (ks.z * nhfactor + kd.z * nlfactor) * lcolor.z;
+      resultColor = PVector.add(resultColor, dotmult(
+                      PVector.add(PVector.mult(ks, nhfactor),
+                                  PVector.mult(kd, nlfactor)), lcolor));
     }
 
     return resultColor;
@@ -165,7 +164,6 @@ public class Glazed extends Shader
     super(diffuseColor);
   }
 
-
   /**
    * @see Shader#shade()
    */
@@ -186,9 +184,8 @@ public class Glazed extends Shader
       PVector lcolor = light.getColor();
       n = data.normalVector;
       float factor = max(0, l.dot(n));
-      resultColor.x += kd.x * lcolor.x * factor;
-      resultColor.y += kd.y * lcolor.y * factor;
-      resultColor.z += kd.z * lcolor.z * factor;
+      resultColor = PVector.add(resultColor,
+                      PVector.mult(dotmult(kd, lcolor), factor));
     }
 
     return resultColor;
