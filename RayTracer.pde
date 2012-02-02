@@ -2,6 +2,7 @@
 final String SCENE_FILE = "four_spheres.xml";
 // change to distinguish background from shadows
 final color BACKGROUND_COLOR = color(1, 0, 1);
+final PVector BACKGROUND_COLOR_VECTOR = new PVector(0, 0, 0);
 // change the color of the overall ambient light
 final PVector AMBIENT_LIGHT_COLOR = new PVector(1, 1, 1);
 // change the intensity of the ambient light

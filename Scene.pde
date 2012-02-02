@@ -33,18 +33,22 @@ public class Scene
     if (debug) println(myCamera);
     Ray ray = myCamera.getRay(xRatio, yRatio);
     if (debug) println("Camera to Pixel ray = " + ray);
+    PVector resultColor = rayColor(ray);
+    if (debug) println("Resulting color = " + resultColor);
+    return color(resultColor.x, resultColor.y, resultColor.z);
+  }
+
+  public PVector rayColor(Ray ray) {
     IntersectionData data = getClosestIntersection(ray);
     if (data != null)
     {
       if (debug) println(data);
-      PVector resultColor = data.surface.getColor(data, this);
-      if (debug) println("Resulting color = " + resultColor);
-      return color(resultColor.x, resultColor.y, resultColor.z);
+      return data.surface.getColor(data, this);
     }
     else
     {
       if (debug) println("No surface hit by ray.");
-      return BACKGROUND_COLOR;
+      return BACKGROUND_COLOR_VECTOR;
     }
   }
 
