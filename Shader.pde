@@ -57,7 +57,7 @@ public class Lambertian extends Shader
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    PVector resultColor = new PVector(0, 0, 0);
+    PVector resultColor = BACKGROUND_COLOR_VECTOR;
     PVector kd = myDiffuseColor.get();
     for (Light light : scene.getLights()) {
       if (!isShadow(data, scene, light)) {
@@ -114,7 +114,7 @@ public class Phong extends Shader
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    PVector resultColor = new PVector(0, 0, 0);
+    PVector resultColor = BACKGROUND_COLOR_VECTOR;
     PVector kd = myDiffuseColor.get();
     PVector ks = mySpecularColor.get();
     for (Light light : scene.getLights()) {
@@ -270,20 +270,17 @@ public class Refractive extends Reflective
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    PVector s2 = refract(GLOBAL_IOR, myIOR, PVector.mult(data.normalVector, 1),
+    PVector s2 = refract(GLOBAL_IOR, myIOR, data.normalVector,
                          data.cameraRay.getDirection());
     Ray inRay = new Ray(data.hitPoint, s2).getOffset();
     IntersectionData data2 = scene.getClosestIntersection(inRay, data.depth);
-    PVector resultColor = new PVector(0, 0, 0);
-    if (data2 != null)
+    PVector resultColor = BACKGROUND_COLOR_VECTOR;
+    if (data2 != null && data.surface == data2.surface)
     {
-      s2 = refract(GLOBAL_IOR, myIOR, data2.normalVector,
+      s2 = refract(myIOR, GLOBAL_IOR, PVector.mult(data2.normalVector, -1),
                    data2.cameraRay.getDirection());
-      Ray outRay = new Ray(data.hitPoint, s2).getOffset();
+      Ray outRay = new Ray(data2.hitPoint, s2).getOffset();
       resultColor = scene.rayColor(outRay, data.depth);
-    }
-    else {
-      resultColor = BACKGROUND_COLOR_VECTOR;
     }
     return PVector.add(PVector.mult(resultColor, 0.5), PVector.mult(super.shade(data, scene),0.5));
   }

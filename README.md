@@ -14,7 +14,7 @@
   * Phong = Lambertian + Highlight
   * Glazed = Lambertian + Reflection
   * Reflective = Lambertian + Highlight + Reflection
-  * Transparent = Lambertian + Highlight + Reflection + Refraction
+  * Refractive = Lambertian + Highlight + Reflection + Refraction
 * Shadows *
   * Spot shadow
   * Area shadow *

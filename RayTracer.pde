@@ -10,7 +10,7 @@ final float AMBIENT_LIGHT = 0.16;
 // Index of Refraction of "Air"
 final float GLOBAL_IOR = 1.0;
 // Global Recursion Limit
-final int MAX_RECURSION_DEPTH = 8;
+final int MAX_RECURSION_DEPTH = 5;
 
 // change to print out debugging information while processing
 boolean debug = false;
