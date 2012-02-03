@@ -60,7 +60,6 @@ public class Lambertian extends Shader
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    // TODO: Complete this function
     PVector resultColor = new PVector(0, 0, 0);
     PVector kd = myDiffuseColor.get();
     for (Light light : scene.getLights()) {
@@ -118,7 +117,6 @@ public class Phong extends Shader
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    // TODO: Complete this function
     PVector resultColor = new PVector(0, 0, 0);
     PVector kd = myDiffuseColor.get();
     PVector ks = mySpecularColor.get();
@@ -174,7 +172,6 @@ public class Glazed extends Lambertian
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    // TODO: Add in resursion limits!
     PVector d = data.cameraRay.getDirection();
     PVector n = data.normalVector;
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
@@ -220,7 +217,6 @@ public class Reflective extends Phong
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    // TODO: Add in resursion limits!
     PVector d = data.cameraRay.getDirection();
     PVector n = data.normalVector;
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
@@ -277,7 +273,6 @@ public class Refractive extends Reflective
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    // TODO: Add in resursion limits!
     PVector s2 = refract(GLOBAL_IOR, myIOR, PVector.mult(data.normalVector, 1),
                          data.cameraRay.getDirection());
     Ray inRay = new Ray(data.hitPoint, s2).getOffset();
@@ -288,24 +283,12 @@ public class Refractive extends Reflective
       s2 = refract(GLOBAL_IOR, myIOR, data2.normalVector,
                    data2.cameraRay.getDirection());
       Ray outRay = new Ray(data.hitPoint, s2).getOffset();
-      // don't double count depth
-      IntersectionData data3 = scene.getClosestIntersection(outRay, data.depth);
-      if (data3 != null)
-      {
-         resultColor = scene.rayColor(data3);
-      }
-      else
-      {
-      // resultColor = scene.rayColor(data2);
-      }
+      resultColor = scene.rayColor(outRay, data.depth);
     }
     else {
-      // println("surfaces is not closed");
-      // resultColor = scene.rayColor(data2);
-      // return BACKGROUND_COLOR_VECTOR;
+      resultColor = BACKGROUND_COLOR_VECTOR;
     }
-    // return resultColor;
-        return PVector.add(PVector.mult(resultColor, 0.5), PVector.mult(super.shade(data, scene),0.5));
+    return PVector.add(PVector.mult(resultColor, 0.5), PVector.mult(super.shade(data, scene),0.5));
   }
   /**
    * For debugging purposes.

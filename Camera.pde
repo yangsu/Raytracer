@@ -47,7 +47,6 @@ public class Camera
    */
   public Ray getRay (float xRatio, float yRatio)
   {
-    // TODO: Complete this function
     PVector result = PVector.mult(myZaxis, -myPlaneSize.z);
     float u = -myPlaneSize.x/2 + myPlaneSize.x * xRatio; // need 0.5 offset?
     float v = -myPlaneSize.y/2 + myPlaneSize.y * yRatio; // need 0.5 offset?
