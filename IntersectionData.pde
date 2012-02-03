@@ -14,6 +14,8 @@ public class IntersectionData
   public Surface surface;
   /** The t value along the ray at which the intersection occurred. */
   public float t;
+  /** The recursion depth **/
+  public int depth;
 
   /**
    * Construct intersection data from pieces.
@@ -22,13 +24,15 @@ public class IntersectionData
                            PVector hitPoint,
                            PVector normalVector,
                            Surface surface,
-                           float t)
+                           float t,
+                           int depth)
   {
     this.cameraRay = cameraRay;
     this.hitPoint = hitPoint;
     this.normalVector = normalVector;
     this.surface = surface;
     this.t = t;
+    this.depth = depth;
   }
 
   /**

@@ -31,13 +31,13 @@ public class Scene
     if (debug) println(myCamera);
     Ray ray = myCamera.getRay(xRatio, yRatio);
     if (debug) println("Camera to Pixel ray = " + ray);
-    PVector resultColor = rayColor(ray);
+    PVector resultColor = rayColor(ray, 0);
     if (debug) println("Resulting color = " + resultColor);
     return color(resultColor.x, resultColor.y, resultColor.z);
   }
 
-  public PVector rayColor (Ray ray) {
-    return rayColor(getClosestIntersection(ray));
+  public PVector rayColor (Ray ray, int depth) {
+    return rayColor(getClosestIntersection(ray, depth));
   }
 
   public PVector rayColor (IntersectionData data) {
@@ -56,8 +56,13 @@ public class Scene
   /**
    * Returns the first intersection of given ray with surfaces in this scene.
    */
-  public IntersectionData getClosestIntersection (Ray ray)
+  public IntersectionData getClosestIntersection (Ray ray, int depth)
   {
+    if (depth > MAX_RECURSION_DEPTH) {
+      // println("hit max MAX_RECURSION_DEPTH");
+      return null;
+    }
+
     float minDistance = Integer.MAX_VALUE;
     Surface hitSurface = null;
     for (Surface s : mySurfaces)
@@ -74,7 +79,7 @@ public class Scene
       PVector hitPoint = ray.evaluate(minDistance);
       return new IntersectionData(ray, hitPoint,
                                   hitSurface.getNormal(hitPoint),
-                                  hitSurface, minDistance);
+                                  hitSurface, minDistance, depth + 1);
     }
     else
     {

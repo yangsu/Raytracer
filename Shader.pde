@@ -180,7 +180,8 @@ public class Glazed extends Lambertian
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
-    PVector resultColor = PVector.mult(scene.rayColor(rRay), myReflectivity);
+    PVector resultColor = PVector.mult(scene.rayColor(rRay, data.depth),
+                                       myReflectivity);
     return PVector.add(resultColor, super.shade(data, scene));
   }
 
@@ -225,7 +226,7 @@ public class Reflective extends Phong
     PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
-    PVector resultColor = dotmult(scene.rayColor(rRay),
+    PVector resultColor = dotmult(scene.rayColor(rRay, data.depth),
                             PVector.mult(mySpecularColor, myReflectivity));
     return PVector.add(resultColor, super.shade(data, scene));
   }
@@ -285,14 +286,15 @@ public class Refractive extends Reflective
     PVector s2 = refract(GLOBAL_IOR, myIOR, PVector.mult(data.normalVector, 1),
                          data.cameraRay.getDirection());
     Ray inRay = new Ray(data.hitPoint, s2).getOffset();
-    IntersectionData data2 = scene.getClosestIntersection(inRay);
+    IntersectionData data2 = scene.getClosestIntersection(inRay, data.depth);
     PVector resultColor = new PVector(0, 0, 0);
     if (data2 != null)
     {
       s2 = refract(GLOBAL_IOR, myIOR, data2.normalVector,
                    data2.cameraRay.getDirection());
       Ray outRay = new Ray(data.hitPoint, s2).getOffset();
-      IntersectionData data3 = scene.getClosestIntersection(outRay);
+      // don't double count depth
+      IntersectionData data3 = scene.getClosestIntersection(outRay, data.depth);
       if (data3 != null)
       {
          resultColor = scene.rayColor(data3);
