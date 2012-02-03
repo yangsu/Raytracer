@@ -17,25 +17,25 @@
     <color>1 1 1</color>
   </light>
 
-  <shader name="red" type="Glazed">
+  <shader name="red" type="Reflective">
     <diffuseColor>1 .3 .2</diffuseColor>
     <specularColor>0.75 0.75 0.75</specularColor>
     <reflectivity>1</reflectivity>
     <exponent>50</exponent>
   </shader>
-  <shader name="green" type="Glazed">
+  <shader name="green" type="Reflective">
     <diffuseColor>.2 1 .3</diffuseColor>
     <specularColor>0.75 0.75 0.75</specularColor>
     <reflectivity>1</reflectivity>
     <exponent>50</exponent>
   </shader>
-  <shader name="blue" type="Glazed">
+  <shader name="blue" type="Reflective">
     <diffuseColor>.2 .3 1</diffuseColor>
     <specularColor>0.75 0.75 0.75</specularColor>
     <reflectivity>1</reflectivity>
     <exponent>50</exponent>
   </shader>
-  <shader name="gray" type="Glazed">
+  <shader name="gray" type="Reflective">
     <diffuseColor>.5 .5 .5</diffuseColor>
     <specularColor>0.75 0.75 0.75</specularColor>
     <reflectivity>1</reflectivity>

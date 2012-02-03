@@ -260,14 +260,8 @@ public class Refractive extends Reflective
                      float reflectivity,
                      float ior)
   {
-    super(diffuseColor, specularColor, exponent, 0);
+    super(diffuseColor, specularColor, exponent, reflectivity);
     myIOR = ior;
-    PVector a = refract(1, 1.0, new PVector(0, 1, 0),
-                      new PVector(-1, 1, 0)
-                        );
-    println("-----------------------------------");
-    println(a);
-    println("-----------------------------------");
   }
 
   private PVector refract(float n1, float n2, PVector n, PVector s1) {
@@ -298,16 +292,12 @@ public class Refractive extends Reflective
       IntersectionData data3 = scene.getClosestIntersection(outRay, data.depth);
       if (data3 != null)
       {
-         resultColor = PVector.mult(scene.rayColor(data3),
-                                    myReflectivity*pow(0.5, data.depth));
+         resultColor = scene.rayColor(data3);
       }
       else
       {
       // resultColor = scene.rayColor(data2);
-
       }
-      // resultColor = scene.rayColor(outRay);
-
     }
     else {
       // println("surfaces is not closed");
@@ -315,7 +305,7 @@ public class Refractive extends Reflective
       // return BACKGROUND_COLOR_VECTOR;
     }
     // return resultColor;
-        return PVector.add(PVector.mult(resultColor, 0.9), PVector.mult(super.shade(data, scene),0.1));
+        return PVector.add(PVector.mult(resultColor, 0.5), PVector.mult(super.shade(data, scene),0.5));
   }
   /**
    * For debugging purposes.
