@@ -34,11 +34,8 @@ public abstract class Shader
   /**
    * Calculate whether there's shadow or not
    */
-  public boolean isShadow (IntersectionData data, Scene scene, Light lg) {
-    PVector l = PVector.sub(lg.getPosition(), data.hitPoint);
-    l.normalize();
-    Ray sRay = new Ray(data.hitPoint, l).getOffset();
-    return scene.isAnyIntersection(sRay);
+  public boolean isShadow (IntersectionData data, Scene scene, Light l) {
+    return scene.isAnyIntersection(l.getRayToLight(data.hitPoint));
   }
 }
 
