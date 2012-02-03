@@ -112,10 +112,7 @@ public class Phong extends Shader
     myExponent = exponent;
   }
 
-  /**
-   * @see Shader#shade()
-   */
-  public PVector shade (IntersectionData data, Scene scene)
+  protected PVector phong (IntersectionData data, Scene scene)
   {
     PVector resultColor = BACKGROUND_COLOR_VECTOR;
     PVector kd = myDiffuseColor.get();
@@ -134,8 +131,14 @@ public class Phong extends Shader
                                   PVector.mult(kd, nlfactor)), lcolor));
       }
     }
-
     return resultColor;
+  }
+  /**
+   * @see Shader#shade()
+   */
+  public PVector shade (IntersectionData data, Scene scene)
+  {
+    return phong(data, scene);
   }
 
   /**
@@ -213,20 +216,28 @@ public class Reflective extends Phong
     myReflectivity = reflectivity;
   }
 
+  protected PVector reflect (IntersectionData data, Scene scene)
+  {
+    if (myReflectivity > 0) {
+      PVector d = data.cameraRay.getDirection();
+      PVector n = data.normalVector;
+      PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n)*2));
+      r.normalize();
+      Ray rRay = new Ray(data.hitPoint, r).getOffset();
+
+      return dotmult(scene.rayColor(rRay, data.depth),
+                     PVector.mult(mySpecularColor,
+                                  myReflectivity*pow(0.5,data.depth)));
+    }
+    return BACKGROUND_COLOR_VECTOR;
+  }
   /**
    * @see Shader#shade()
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    PVector d = data.cameraRay.getDirection();
-    PVector n = data.normalVector;
-    PVector r = PVector.sub(d, PVector.mult(n, PVector.dot(d, n) * 2));
-    r.normalize();
-    Ray rRay = new Ray(data.hitPoint, r).getOffset();
-    PVector resultColor = dotmult(scene.rayColor(rRay, data.depth),
-                            PVector.mult(mySpecularColor,
-                                         myReflectivity*pow(0.5, data.depth)));
-    return PVector.add(resultColor, super.shade(data, scene));
+    PVector resultColor = phong(data, scene);
+    return PVector.add(resultColor, reflect(data, scene));
   }
 
   /**
@@ -261,7 +272,7 @@ public class Refractive extends Reflective
     myIOR = ior;
   }
 
-  private PVector refract(float n1, float n2, PVector n, PVector s1) {
+  private PVector refractRay(float n1, float n2, PVector n, PVector s1) {
     float c1 = -n.dot(s1);
     float nn = n1 / n2;
     float c2 = sqrt(1-sq(nn)*(1 - sq(c1)));
@@ -269,32 +280,46 @@ public class Refractive extends Reflective
     s2.normalize();
     return s2;
   }
+
+  private PVector refract (IntersectionData data, Scene scene) {
+    PVector resultColor = BACKGROUND_COLOR_VECTOR;
+    if (myAlpha < 1.0){
+      if (debug) println("in:refracting ray "+data.cameraRay.getDirection());
+      PVector s2 = refractRay(GLOBAL_IOR, myIOR, data.normalVector,
+                           data.cameraRay.getDirection());
+      if (debug) println("refracted ray " + s2);
+      Ray inRay = new Ray(data.hitPoint, s2).getOffset();
+      IntersectionData data2 = scene.getClosestIntersection(inRay, data.depth);
+      if (data2 != null &&
+          data.surface == data2.surface)
+      {
+        if (debug) println("out:refracting ray "+s2);
+        s2 = refractRay(myIOR, GLOBAL_IOR, PVector.mult(data2.normalVector, -1),
+                     s2);
+        if (debug) println("refracted ray " +s2);
+        Ray outRay = new Ray(data2.hitPoint, s2).getOffset();
+        resultColor = scene.rayColor(outRay, data.depth);
+      }
+    }
+    return resultColor;
+  }
   /**
    * @see Shader#shade()
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    PVector s2 = refract(GLOBAL_IOR, myIOR, data.normalVector,
-                         data.cameraRay.getDirection());
-    Ray inRay = new Ray(data.hitPoint, s2).getOffset();
-    IntersectionData data2 = scene.getClosestIntersection(inRay, data.depth);
-    PVector resultColor = BACKGROUND_COLOR_VECTOR;
-    if (data2 != null && data.surface == data2.surface)
-    {
-      s2 = refract(myIOR, GLOBAL_IOR, PVector.mult(data2.normalVector, -1),
-                   s2);
-      Ray outRay = new Ray(data2.hitPoint, s2).getOffset();
-      resultColor = scene.rayColor(outRay, data.depth);
-    }
-    return PVector.add(PVector.mult(resultColor, 1-myAlpha),
-                       PVector.mult(super.shade(data, scene), myAlpha));
+    PVector resultColor =
+      PVector.add(PVector.mult(refract(data, scene), 1-myAlpha),
+                  PVector.mult(phong(data, scene), myAlpha));
+
+    return PVector.add(resultColor, reflect(data, scene));
   }
   /**
    * For debugging purposes.
    */
   public String toString ()
   {
-    return "Reflective Shader = " +
+    return "Refractive Shader = " +
            "\n      Diffuse Color = " + myDiffuseColor +
            "\n      Specular Color = " + myDiffuseColor +
            "\n      exponent = " + myExponent +
