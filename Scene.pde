@@ -191,23 +191,32 @@ public class Scene
   private void addShader (String name, String type, XMLElement[] properties)
   {
     Map<String, Object> values = parse(properties);
+
+    PVector a = ((PVector)values.get("alpha"));
+    float alpha = 1.0;
+    if (a != null)
+      alpha = a.x;
+
     if (type.equalsIgnoreCase("lambertian"))
     {
       myShaders.put(name,
-                    new Lambertian((PVector)values.get("diffusecolor")));
+                    new Lambertian((PVector)values.get("diffusecolor"),
+                                   alpha));
     }
     else if (type.equalsIgnoreCase("phong"))
     {
       myShaders.put(name,
                     new Phong((PVector)values.get("diffusecolor"),
                               (PVector)values.get("specularcolor"),
-                              ((PVector)values.get("exponent")).x));
+                              ((PVector)values.get("exponent")).x,
+                              alpha));
     }
     else if (type.equalsIgnoreCase("glazed"))
     {
       myShaders.put(name,
                     new Glazed((PVector)values.get("diffusecolor"),
-                               ((PVector)values.get("reflectivity")).x));
+                               ((PVector)values.get("reflectivity")).x,
+                               alpha));
     }
     else if (type.equalsIgnoreCase("reflective"))
     {
@@ -215,7 +224,8 @@ public class Scene
                     new Reflective((PVector)values.get("diffusecolor"),
                                    (PVector)values.get("specularcolor"),
                                    ((PVector)values.get("exponent")).x,
-                                   ((PVector)values.get("reflectivity")).x));
+                                   ((PVector)values.get("reflectivity")).x,
+                                   alpha));
     }
     else if (type.equalsIgnoreCase("refractive"))
     {
@@ -224,7 +234,8 @@ public class Scene
                                    (PVector)values.get("specularcolor"),
                                    ((PVector)values.get("exponent")).x,
                                    ((PVector)values.get("reflectivity")).x,
-                                   ((PVector)values.get("refractionindex")).x));
+                                   ((PVector)values.get("refractionindex")).x,
+                                   alpha));
     }
   }
 

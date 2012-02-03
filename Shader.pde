@@ -7,12 +7,14 @@ public abstract class Shader
   /** The color of the surface. */
   protected final PVector myDiffuseColor;
 
+  protected float myAlpha;
   /**
    * Construct shader from data.
    */
-  public Shader (PVector diffuse)
+  public Shader (PVector diffuse, float alpha)
   {
     myDiffuseColor = diffuse;
+    myAlpha = alpha;
   }
 
   /**
@@ -47,9 +49,9 @@ public class Lambertian extends Shader
   /**
    * Construct shader from data.
    */
-  public Lambertian (PVector diffuseColor)
+  public Lambertian (PVector diffuseColor, float alpha)
   {
-    super(diffuseColor);
+    super(diffuseColor, alpha);
   }
 
   /**
@@ -102,9 +104,10 @@ public class Phong extends Shader
    */
   public Phong (PVector diffuseColor,
                 PVector specularColor,
-                float exponent)
+                float exponent,
+                float alpha)
   {
-    super(diffuseColor);
+    super(diffuseColor, alpha);
     mySpecularColor = specularColor;
     myExponent = exponent;
   }
@@ -158,9 +161,9 @@ public class Glazed extends Lambertian
   /**
    * Construct shader from data.
    */
-  public Glazed (PVector diffuseColor, float reflectivity)
+  public Glazed (PVector diffuseColor, float reflectivity, float alpha)
   {
-    super(diffuseColor);
+    super(diffuseColor, alpha);
     myReflectivity = reflectivity;
   }
 
@@ -203,9 +206,10 @@ public class Reflective extends Phong
   public Reflective (PVector diffuseColor,
                      PVector specularColor,
                      float exponent,
-                     float reflectivity)
+                     float reflectivity,
+                     float alpha)
   {
-    super(diffuseColor, specularColor, exponent);
+    super(diffuseColor, specularColor, exponent, alpha);
     myReflectivity = reflectivity;
   }
 
@@ -246,14 +250,14 @@ public class Reflective extends Phong
 public class Refractive extends Reflective
 {
   private float myIOR;
-
   public Refractive (PVector diffuseColor,
                      PVector specularColor,
                      float exponent,
                      float reflectivity,
-                     float ior)
+                     float ior,
+                     float alpha)
   {
-    super(diffuseColor, specularColor, exponent, reflectivity);
+    super(diffuseColor, specularColor, exponent, reflectivity, alpha);
     myIOR = ior;
   }
 
@@ -278,11 +282,12 @@ public class Refractive extends Reflective
     if (data2 != null && data.surface == data2.surface)
     {
       s2 = refract(myIOR, GLOBAL_IOR, PVector.mult(data2.normalVector, -1),
-                   data2.cameraRay.getDirection());
+                   s2);
       Ray outRay = new Ray(data2.hitPoint, s2).getOffset();
       resultColor = scene.rayColor(outRay, data.depth);
     }
-    return PVector.add(PVector.mult(resultColor, 0.5), PVector.mult(super.shade(data, scene),0.5));
+    return PVector.add(PVector.mult(resultColor, 1-myAlpha),
+                       PVector.mult(super.shade(data, scene), myAlpha));
   }
   /**
    * For debugging purposes.
