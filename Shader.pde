@@ -181,7 +181,7 @@ public class Glazed extends Lambertian
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
     PVector resultColor = PVector.mult(scene.rayColor(rRay, data.depth),
-                                       myReflectivity);
+                                       myReflectivity*pow(0.5, data.depth));
     return PVector.add(resultColor, super.shade(data, scene));
   }
 
@@ -227,7 +227,8 @@ public class Reflective extends Phong
     r.normalize();
     Ray rRay = new Ray(data.hitPoint, r).getOffset();
     PVector resultColor = dotmult(scene.rayColor(rRay, data.depth),
-                            PVector.mult(mySpecularColor, myReflectivity));
+                            PVector.mult(mySpecularColor,
+                                         myReflectivity*pow(0.5, data.depth)));
     return PVector.add(resultColor, super.shade(data, scene));
   }
 
@@ -297,7 +298,8 @@ public class Refractive extends Reflective
       IntersectionData data3 = scene.getClosestIntersection(outRay, data.depth);
       if (data3 != null)
       {
-         resultColor = scene.rayColor(data3);
+         resultColor = PVector.mult(scene.rayColor(data3),
+                                    myReflectivity*pow(0.5, data.depth));
       }
       else
       {
