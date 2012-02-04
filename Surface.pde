@@ -145,21 +145,6 @@ public class Box extends Surface
     myF = PVector.add(myMinPoint, myY);
     myG = PVector.sub(myMaxPoint, myZ);
     myH = PVector.add(myMinPoint, myX);
-
-    println("myA: "+myA);
-    println("myB: "+myB);
-    println("myC: "+myC);
-    println("myD: "+myD);
-    println("myE: "+myE);
-    println("myF: "+myF);
-    println("myG: "+myG);
-    println("myH: "+myH);
-    println(rectNormal(myA, myB, myC, myD));
-    println(rectNormal(myH, myG, myF, myE));
-    println(rectNormal(myE, myF, myB, myA));
-    println(rectNormal(myD, myC, myG, myH));
-    println(rectNormal(myB, myF, myG, myC));
-    println(rectNormal(myE, myA, myD, myH));
   }
 
   private PVector triangleNormal(PVector a, PVector b, PVector c) {
@@ -196,7 +181,6 @@ public class Box extends Surface
         r.getDirection().dot(n) <= 0);
   }
   private PVector rectNormal(PVector a, PVector b, PVector c, PVector d) {
-    // PVector n = PVector.sub(c, a).cross(PVector.sub(b, d));
     PVector n = PVector.sub(c, a).cross(PVector.sub(b, d));
     n.normalize();
     return n;
@@ -214,13 +198,9 @@ public class Box extends Surface
         rectIntersect(ray, myD, myC, myG, myH, t) ||
         rectIntersect(ray, myB, myF, myG, myC, t) ||
         rectIntersect(ray, myE, myA, myD, myH, t))
-    {
-      if (debug) println("t: "+t);
       return t.x;
-    }
-    else {
+    else
       return -Integer.MAX_VALUE;
-    }
   }
   /**
    * @see Surface#getNormal()
@@ -241,7 +221,7 @@ public class Box extends Surface
       return new PVector(0, 0, 1);
     else
     {
-      println("wtf!!!");
+      println("error!");
       return new PVector(0, 0, 0);
     }
   }
