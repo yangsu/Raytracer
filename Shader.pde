@@ -59,7 +59,7 @@ public class Lambertian extends Shader
    */
   public PVector shade (IntersectionData data, Scene scene)
   {
-    PVector resultColor = BACKGROUND_COLOR_VECTOR;
+    PVector resultColor = new PVector(0, 0, 0);
     PVector kd = myDiffuseColor.get();
     for (Light light : scene.getLights()) {
       if (!isShadow(data, scene, light)) {
@@ -114,7 +114,7 @@ public class Phong extends Shader
 
   protected PVector phong (IntersectionData data, Scene scene)
   {
-    PVector resultColor = BACKGROUND_COLOR_VECTOR;
+    PVector resultColor = new PVector(0, 0, 0);
     PVector kd = myDiffuseColor.get();
     PVector ks = mySpecularColor.get();
     for (Light light : scene.getLights()) {
@@ -282,11 +282,11 @@ public class Refractive extends Reflective
   }
 
   private PVector refract (IntersectionData data, Scene scene) {
-    PVector resultColor = BACKGROUND_COLOR_VECTOR;
+    PVector resultColor = new PVector(0, 0, 0);
     if (myAlpha < 1.0){
       if (debug) println("in:refracting ray "+data.cameraRay.getDirection());
       PVector s2 = refractRay(GLOBAL_IOR, myIOR, data.normalVector,
-                           data.cameraRay.getDirection());
+                              data.cameraRay.getDirection());
       if (debug) println("refracted ray " + s2);
       Ray inRay = new Ray(data.hitPoint, s2).getOffset();
       IntersectionData data2 = scene.getClosestIntersection(inRay, data.depth);
@@ -294,8 +294,8 @@ public class Refractive extends Reflective
           data.surface == data2.surface)
       {
         if (debug) println("out:refracting ray "+s2);
-        s2 = refractRay(myIOR, GLOBAL_IOR, PVector.mult(data2.normalVector, -1),
-                     s2);
+        s2 = refractRay(myIOR, GLOBAL_IOR,
+                        PVector.mult(data2.normalVector, -1), s2);
         if (debug) println("refracted ray " +s2);
         Ray outRay = new Ray(data2.hitPoint, s2).getOffset();
         resultColor = scene.rayColor(outRay, data.depth);
@@ -311,7 +311,7 @@ public class Refractive extends Reflective
     PVector resultColor =
       PVector.add(PVector.mult(refract(data, scene), 1-myAlpha),
                   PVector.mult(phong(data, scene), myAlpha));
-
+    // return resultColor;
     return PVector.add(resultColor, reflect(data, scene));
   }
   /**
