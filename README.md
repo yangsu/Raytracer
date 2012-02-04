@@ -1,23 +1,20 @@
 # Ray Tracer
 ### Yang Su
-### 2012-01-30 - 2012-02-01, ~5hrs
+### 2012-01-30 - 2012-02-03, ~15hrs
 
 ## Capabilities
 * Surfaces
   * Sphere
-  * Cube *
+  * Cube
 * Lights
   * Omni Direction Lights
-  * Spot *
+  * Spot * Incomplete
 * Shaders
   * Lambertian
   * Phong = Lambertian + Highlight
   * Glazed = Lambertian + Reflection
   * Reflective = Lambertian + Highlight + Reflection
   * Refractive = Lambertian + Highlight + Reflection + Refraction
-* Shadows *
+* Shadows
   * Spot shadow
-  * Area shadow *
-
-## Optimizations
-???
+  * Area shadow * Incomplete
