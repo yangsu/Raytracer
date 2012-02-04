@@ -1,5 +1,5 @@
 // change to test different scenes
-final String SCENE_FILE = "two_boxes.xml";
+final String SCENE_FILE = "three_boxes_refraction.xml";
 // change to distinguish background from shadows
 final color BACKGROUND_COLOR = color(1, 0, 1);
 final PVector BACKGROUND_COLOR_VECTOR = new PVector(0, 0, 0);

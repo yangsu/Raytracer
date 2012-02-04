@@ -27,6 +27,20 @@
     <reflectivity>1.0</reflectivity>
   </shader>
 
+  <shader name="red" type="Refractive">
+    <diffuseColor>1 .3 .2</diffuseColor>
+    <specularColor>1 1 1</specularColor>
+    <exponent>50</exponent>
+    <reflectivity>0.2</reflectivity>
+    <refractionIndex>1.0</refractionIndex>
+    <alpha>0.2</alpha>
+  </shader>
+
+  <surface type="Box">
+    <shader ref="red" />
+    <minPoint>1 -1 1</minPoint>
+    <maxPoint>3 1 3</maxPoint>
+  </surface>
   <surface type="Box">
     <shader ref="blue" />
     <minPoint>-1 -1 -1</minPoint>
