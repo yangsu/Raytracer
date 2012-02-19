@@ -1,5 +1,5 @@
 // change to test different scenes
-final String SCENE_FILE = "three_boxes_refraction.xml";
+final String SCENE_FILE = "four_spheres_refraction.xml";
 // change to distinguish background from shadows
 final color BACKGROUND_COLOR = color(1, 0, 1);
 final PVector BACKGROUND_COLOR_VECTOR = new PVector(0, 0, 0);
@@ -10,7 +10,7 @@ final float AMBIENT_LIGHT = 0.16;
 // Index of Refraction of "Air"
 final float GLOBAL_IOR = 1.0;
 // Global Recursion Limit
-final int MAX_RECURSION_DEPTH = 5;
+final int MAX_RECURSION_DEPTH = 9;
 
 // change to print out debugging information while processing
 boolean debug = false;
